@@ -159,9 +159,13 @@ const config: Config = {
           showLastUpdateTime: false,
           disableVersioning: false,
           includeCurrentVersion: false,
-          onlyIncludeVersions: ['0.0.3','0.0.4','0.0.5'],
-          lastVersion:"0.0.5",
+          onlyIncludeVersions: ['0.0.3','0.0.4','0.0.5','0.0.6'],
+          lastVersion:"0.0.6",
           versions: {
+            "0.0.6": {
+              label: 'v6',
+              banner:"none"
+            },
             "0.0.5": {
               label: 'v5',
               banner:"none"
