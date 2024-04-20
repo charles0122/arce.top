@@ -1,0 +1,62 @@
+{
+  "name": "arce-top",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle @docusaurus/theme-classic",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "crowdin": "crowdin",
+    "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@crowdin/cli": "^3.19.2",
+    "@docusaurus/core": "3.2.1",
+    "@docusaurus/plugin-ideal-image": "^3.2.1",
+    "@docusaurus/plugin-pwa": "^3.2.1",
+    "@docusaurus/preset-classic": "3.2.1",
+    "@docusaurus/theme-common": "^3.2.1",
+    "@docusaurus/theme-live-codeblock": "^3.2.1",
+    "@docusaurus/theme-search-algolia": "^3.2.1",
+    "@docusaurus/utils-common": "^3.2.1",
+    "@giscus/react": "^2.4.0",
+    "@mdx-js/react": "^3.0.1",
+    "clsx": "^2.1.0",
+    "docusaurus-plugin-image-zoom": "^2.0.0",
+    "prism-react-renderer": "^2.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rehype-katex": "^7.0.0",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@docusaurus/eslint-plugin": "^3.2.1",
+    "@docusaurus/module-type-aliases": "3.2.1",
+    "@docusaurus/tsconfig": "3.2.1",
+    "@docusaurus/types": "3.2.1",
+    "cross-env": "^7.0.3",
+    "typescript": "~5.2.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
+}

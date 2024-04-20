@@ -1,0 +1,32 @@
+{
+  "extends": "@docusaurus/tsconfig",
+  "compilerOptions": {
+    // "lib": ["DOM", "ESNext"],
+    "baseUrl": ".",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+
+    // "allowUnreachableCode": false,
+    // "exactOptionalPropertyTypes": false,
+    // "noFallthroughCasesInSwitch": true,
+    // "noImplicitOverride": true,
+    // "noImplicitReturns": true,
+    // "noPropertyAccessFromIndexSignature": false,
+    // "noUncheckedIndexedAccess": true,
+    // "strict": true,
+    // "alwaysStrict": true,
+    // "noImplicitAny": true,
+    // "noImplicitThis": true,
+    // "strictBindCallApply": true,
+    // "strictFunctionTypes": true,
+    // "strictNullChecks": true,
+    // "strictPropertyInitialization": true,
+    // "useUnknownInCatchVariables": true,
+    // "noUnusedLocals": false,
+    // "noUnusedParameters": false,
+    // "importsNotUsedAsValues": "remove",
+
+    // "skipLibCheck": false,
+  },
+  // "exclude": ["src/sw.js"]
+}
