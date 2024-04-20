@@ -277,7 +277,7 @@ const config: Config = {
           label:"community版本",
           type: 'docsVersionDropdown',
           position: 'right',
-          dropdownItemsAfter: [{to: '/versions', label: 'All Community versions'}],
+          dropdownItemsAfter: [],
           dropdownActiveClassDisabled: true,
         },
         {
@@ -301,16 +301,16 @@ const config: Config = {
               className: 'dropdown-archived-versions',
               value: '<b>Archived versions</b>',
             },
-            {to: '/versions', label: 'All Doc versions'},
+            // {to: '/versions', label: 'All Doc versions'},
 
             {
               type: 'html',
               value: '<hr class="dropdown-separator">',
             },
-            {
-              to: '/versions',
-              label: 'All versions',
-            },
+            // {
+            //   to: '/versions',
+            //   label: 'All versions',
+            // },
           ],
           dropdownActiveClassDisabled: true,
         },

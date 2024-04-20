@@ -3,7 +3,7 @@ slug: voxelhouse-by-oskar
 title: Voxel House（体素屋）
 author: OskarStålberg
 author_title: TA
-author_url: www.oskarstalberg.com
+author_url: https://oskarstalberg.tumblr.com/
 author_image_url: https://avatars.githubusercontent.com/u/70085736?v=4
 description: ""
 tags: ["PCG","Wave Function Collapse","Unity","Marching Cubes"]
@@ -13,7 +13,7 @@ oid: oid
 
 分解体素屋演示 作者：Oskar Stålberg
 
-<div style={{textAlign: 'center'}}>
+<div style={{textAlign: 'center' }}>
 
 ![image-20240119161203130](img/2024-01-19-voxelhouse-by-oskar/image-20240119161203130.png)
 

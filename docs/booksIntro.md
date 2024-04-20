@@ -19,18 +19,21 @@ keywords:
 
 import BookCard from '@site/src/components/BookCard'
 import BookCardCover1 from "./books/cover/unityuiandimplementation.jpeg"
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<BookCard
+<!-- <BookCard
 book={{
   name:"Unity用户界面设计与实现",
   cover:BookCardCover1,
   type:"eBook",
   link:"https://unity.com/cn/resources/user-interface-design-and-implementation-in-unity"
-  }} to="User-Interface-Design-and-Implementation-in-Unity"/>
+  }} to="books/User-Interface-Design-and-Implementation-in-Unity"/> -->
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+
 
 ```
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+

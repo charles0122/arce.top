@@ -20,6 +20,6 @@ import BookCard from '@site/src/components/BookCard'
 
 import HuoLuanCover from "./notes/cover/El Amor En Los Tiempos Del Colera.jpeg"
 
-<BookCard book={{cover:HuoLuanCover }} to="love-in-times-of-cholera" />
+<BookCard book={{cover:HuoLuanCover }} to="notes/love-in-times-of-cholera" />
 
 ```

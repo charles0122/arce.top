@@ -20,11 +20,15 @@ import BookCard from '@site/src/components/BookCard'
 
 import HuoLuanCover from "./notes/cover/El Amor En Los Tiempos Del Colera.jpeg"
 
-<BookCard book={{cover:HuoLuanCover }} to="love-in-times-of-cholera" />
+import DocCardList from '@theme/DocCardList';
+
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+
+<BookCard book={{cover:HuoLuanCover }} to="books/love-in-times-of-cholera" />
+
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
 
 ```
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-<DocCardList items={useCurrentSidebarCategory().items}/>

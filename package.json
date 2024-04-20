@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
+    "start": "docusaurus start --locale zh-Hans",
+    "build": "docusaurus build --locale zh-Hans",
     "swizzle": "docusaurus swizzle @docusaurus/theme-classic",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
