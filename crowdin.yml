@@ -20,7 +20,6 @@ files:
   # Markdown 博客文件
   - source: /blog/**/*
     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%
-    ignore: [/blog/**/*.yml,/blog/authors.yml]
     languages_mapping: *languages_mapping
   # Markdown 社区文件
   - source: /blog/**/*

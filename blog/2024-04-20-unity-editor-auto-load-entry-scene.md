@@ -1,7 +1,12 @@
 ---
 slug: unity-editor-auto-load-entry-scene
 title: Unity编辑模式自启动游戏入口场景
-authors: arce
+authors:
+  - name: Arce
+    title: Unity Developer (Weak Version)
+    url: https://github.com/charles0122
+    image_url: https://avatars.githubusercontent.com/u/70085736?v=4
+    email: zainai311@qq.com
 description: ""
 tags: ["Editor","Unity","SceneManagement"]
 ---
