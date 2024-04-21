@@ -381,9 +381,9 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
     algolia: {
-      apiKey: "0acde2fd0238d001643f002d1a7bf4df",
-      indexName: "arcetop",
-      appId: "PJBTDX80UI",
+      apiKey: "17f8103d7297de826216062f2fab401f",
+      indexName: "arce",
+      appId: "L8ERAJFKUJ",
       contextualSearch: true,
     },
     giscus: {

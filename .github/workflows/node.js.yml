@@ -31,6 +31,7 @@ jobs:
       run: pnpm install
     - name: crowdin:sync
       run: pnpm run crowdin:sync
+    # can delete
     - name: build
       run: pnpm run build
 
