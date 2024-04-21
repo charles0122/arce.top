@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkarce_top=self.webpackChunkarce_top||[]).push([[5377],{49626:e=>{e.exports=JSON.parse('{"label":"Getx","permalink":"/arcetop/blog/tags/getx","allTagsPath":"/arcetop/blog/tags","count":2,"unlisted":false}')}}]);

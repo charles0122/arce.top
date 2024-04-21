@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkarce_top=self.webpackChunkarce_top||[]).push([[4464],{17622:e=>{e.exports=JSON.parse('{"label":"docker-compose","permalink":"/arcetop/blog/tags/docker-compose","allTagsPath":"/arcetop/blog/tags","count":1,"unlisted":false}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkarce_top=self.webpackChunkarce_top||[]).push([[6119],{8148:a=>{a.exports=JSON.parse('{"label":"Wave Function Collapse","permalink":"/arcetop/blog/tags/wave-function-collapse","allTagsPath":"/arcetop/blog/tags","count":1,"unlisted":false}')}}]);

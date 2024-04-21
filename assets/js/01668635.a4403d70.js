@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkarce_top=self.webpackChunkarce_top||[]).push([[2432],{63142:a=>{a.exports=JSON.parse('{"label":"AMD","permalink":"/arcetop/blog/tags/amd","allTagsPath":"/arcetop/blog/tags","count":1,"unlisted":false}')}}]);

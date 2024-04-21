@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkarce_top=self.webpackChunkarce_top||[]).push([[8737],{9706:a=>{a.exports=JSON.parse('{"label":"I18N","permalink":"/arcetop/blog/tags/i-18-n","allTagsPath":"/arcetop/blog/tags","count":1,"unlisted":false}')}}]);
