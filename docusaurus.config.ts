@@ -55,12 +55,12 @@ const config: Config = {
   url: 'https://arce.top',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/arcetop',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'arce', // Usually your GitHub org/user name.
-  projectName: 'arce.top', // Usually your repo name.
+  organizationName: 'charles0122', // Usually your GitHub org/user name.
+  projectName: 'arcetop', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

@@ -1,6 +1,8 @@
 name: docsearch
 
-on: deployment
+on:
+  push:
+    branches: [ "gh-pages" ]
 
 jobs:
   algolia:

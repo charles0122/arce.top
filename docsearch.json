@@ -1,7 +1,7 @@
   {
     "index_name": "arcetop",
-    "start_urls": ["https://www.arce.com"],
-    "sitemap_urls": ["https://www.arce.com"],
+    "start_urls": ["https://charles0122.github.io/arcetop/"],
+    "sitemap_urls": ["https://www.arce.com","https://charles0122.github.io/arcetop/"],
     "sitemap_alternate_links": true,
     "stop_urls": [
       "/tests"
