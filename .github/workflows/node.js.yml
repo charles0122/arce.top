@@ -32,3 +32,5 @@ jobs:
       run: pnpm install
     - name: crowdin:sync
       run: pnpm run crowdin:sync
+    - name: build 
+      run: pnpm run build
