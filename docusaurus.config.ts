@@ -385,9 +385,6 @@ const config: Config = {
       indexName: "arcetop",
       appId: "PJBTDX80UI",
       contextualSearch: true,
-      searchParameters: {
-        facetFilters: ['language:zh-CN'],
-      },
     },
     giscus: {
       repo: 'charles0122/discussions.arce.top',
