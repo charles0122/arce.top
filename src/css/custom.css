@@ -17,8 +17,8 @@
       --ifm-color-primary: hsl(300, 1%, 19%);
 
       --ifm-color-primary-dark: #777777;
-      --ifm-color-primary-darker: #05879d;
-      --ifm-color-primary-darkest: #007a87;
+      /* --ifm-color-primary-darker: #05879d;
+      --ifm-color-primary-darkest: #007a87; */
       --ifm-color-primary-light: rgb(114, 114, 114);
       --ifm-color-primary-lighter: #c6ebfc;
       --ifm-color-primary-lightest: #f2fbff;

@@ -42,3 +42,6 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 
 
+publish version
+
+pnpm run docusaurus docs:version 0.0.6

@@ -233,7 +233,6 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-  // themes: ['@docusaurus/theme-search-algolia'],
   themeConfig: {
     announcementBar: {
       id: "announcementBar-arce",
@@ -281,6 +280,7 @@ const config: Config = {
           label:"community版本",
           type: 'docsVersionDropdown',
           position: 'right',
+          docsPluginId: 'community',
           dropdownItemsAfter: [],
           dropdownActiveClassDisabled: true,
         },
@@ -381,9 +381,9 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
     algolia: {
-      apiKey: "17f8103d7297de826216062f2fab401f",
-      indexName: "arce.top",
-      appId: "L8ERAJFKUJ",
+      apiKey: "0acde2fd0238d001643f002d1a7bf4df",
+      indexName: "arcetop",
+      appId: "PJBTDX80UI",
       contextualSearch: true,
       searchParameters: {
         facetFilters: ['language:zh-CN'],
