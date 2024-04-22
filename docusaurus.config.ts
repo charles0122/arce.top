@@ -104,8 +104,8 @@ const config: Config = {
             // Link to GitHub for English docs
             return `https://github.com/charles0122/arce.top/edit/main/arce.top/${versionDocsDirPath}/${docPath}`;
           },
-          editLocalizedFiles: false,
-          editCurrentVersion: false,
+          editLocalizedFiles: true,
+          editCurrentVersion: true,
           include: ['**/*.md', '**/*.mdx'],
           exclude: [
             '**/_*.{js,jsx,ts,tsx,md,mdx}',
@@ -155,32 +155,17 @@ const config: Config = {
           rehypePlugins: [rehypeKatex],
           beforeDefaultRemarkPlugins: [],
           beforeDefaultRehypePlugins: [],
-          showLastUpdateAuthor: false,
-          showLastUpdateTime: false,
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           disableVersioning: false,
-          includeCurrentVersion: false,
-          onlyIncludeVersions: ['0.0.3','0.0.4','0.0.5','0.0.6'],
-          lastVersion:"0.0.6",
+          includeCurrentVersion: true,
+          // onlyIncludeVersions: ['0.0.3','0.0.4','0.0.5','0.0.6','0.0.7',"current"],
+          lastVersion:"current",
           versions: {
-            "0.0.6": {
-              label: 'v6',
+            current:{
+              label: '当前版本',
+              path:"",
               banner:"none"
-            },
-            "0.0.5": {
-              label: 'v5',
-              banner:"none"
-            },
-            "0.0.4": {
-              label: 'v4',
-              banner:"none"
-            },
-            "0.0.3": {
-              label: 'v3',
-              banner:"none"
-            },
-            "0.0.2": {
-              label: 'v2',
-              banner:"unmaintained"
             },
             "0.0.1": {
               label: 'v1',
@@ -252,7 +237,7 @@ const config: Config = {
       hideOnScroll:true,
       logo: {
         alt: 'Arce',
-        src: 'img/logo.svg',
+        src: 'img/logo.webp',
         srcDark: "img/logo.webp",
       },
       items: [
@@ -432,7 +417,7 @@ const config: Config = {
         lastVersion: '1.0.0',
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
-        // editCurrentVersion: true,
+        editCurrentVersion: true,
         versions: {
           "1.0.0": {
             label: 'v1_community',
