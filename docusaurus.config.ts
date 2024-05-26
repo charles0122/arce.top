@@ -258,7 +258,7 @@ const config: Config = {
           to:"community",
           sidebarId: 'communitySidebar',
           position: 'right',
-          label: '社区',
+          label: '第九艺术',
           docsPluginId: 'community'
         },
         {
