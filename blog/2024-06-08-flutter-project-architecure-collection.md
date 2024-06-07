@@ -24,6 +24,8 @@ tags: ["Flutter","Architecure"]
 
 ![img](img/2024-06-08-flutter-project-architecure-collection/aea641bfa1d016988d2e5163c8822ce0.png)
 
+<!-- truncate -->
+
 调用流如下所示。
 
 ![Image description](img/2024-06-08-flutter-project-architecure-collection/fqeiepngw5aeco73r3wx.png)
