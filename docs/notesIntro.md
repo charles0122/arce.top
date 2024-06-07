@@ -28,7 +28,7 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 <BookCard book={{cover:HuoLuanCover }} to="notes/love-in-times-of-cholera" />
 
 
-<DocCardList items={useCurrentSidebarCategory().items}/>
+<!-- <DocCardList items={useCurrentSidebarCategory().items}/> -->
 
 ```
 

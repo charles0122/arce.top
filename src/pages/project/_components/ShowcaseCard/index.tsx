@@ -2,7 +2,7 @@ import React, { memo, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import Image from '@theme/IdealImage';
 import Link from '@docusaurus/Link';
-// import { useSpring, animated, to } from '@react-spring/web';
+import { useSpring, animated, to } from '@react-spring/web';
 
 import styles from './styles.module.css';
 import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
@@ -14,8 +14,8 @@ import {
   type Project,
   type Tag,
 } from '@site/data/project';
-// import { sortBy } from '@site/src/utils/jsUtils';
-// import { useGesture } from 'react-use-gesture';
+import { sortBy } from '@site/src/utils/jsUtils';
+import { useGesture } from '@use-gesture/react';
 
 const TagComp = React.forwardRef<HTMLLIElement, Tag>(
   ({ label, color, description }, ref) => (
@@ -30,13 +30,13 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
   const tagObjects = tags.map((tag) => ({ tag, ...Tags[tag] }));
 
   // Keep same order for all tags
-  // const tagObjectsSorted = sortBy(tagObjects, (tagObject) =>
-  //   TagList.indexOf(tagObject.tag)
-  // );
+  const tagObjectsSorted = sortBy(tagObjects, (tagObject) =>
+    TagList.indexOf(tagObject.tag)
+  );
 
   return (
     <>
-      {tagObjects.map((tagObject, index) => {
+      {tagObjectsSorted.map((tagObject, index) => {
         const id = `showcase_card_tag_${tagObject.tag}`;
 
         return (
@@ -55,9 +55,36 @@ function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
 }
 
 const ShowcaseCard = memo(({ project }: { project: Project }) => {
-  const domTarget = useRef(null);
+  const target = useRef(null);
+  const [{ scale, zoom }, api] = useSpring(() => ({
+    scale: 1,
+    zoom: 0,
+    config: {
+      mass: 5,
+      tension: 500,
+      friction: 40,
+    },
+  }));
+
+  useGesture(
+    {
+      onHover: ({ hovering }) =>
+        hovering ? api({ scale: 1.05 }) : api({ scale: 1 }),
+    },
+    { target, eventOptions: { passive: false } }
+  );
+
   return (
-    <>
+<Link href={project.href } className={styles.showcaseCardLink}>
+<animated.li
+      ref={target}
+      style={{
+        transform: 'perspective(100px)',
+        scale: to([scale, zoom], (s, z) => s + z),
+      }}
+      key={project.title}
+      className={clsx('card shadow--md', styles.showcaseCard)}
+    >
       {project.preview && (
         <div className={clsx('card__image', styles.showcaseCardImage)}>
           <Image src={project.preview} alt={project.title} img={''}/>
@@ -90,7 +117,10 @@ const ShowcaseCard = memo(({ project }: { project: Project }) => {
       <ul className={clsx('card__footer', styles.cardFooter)}>
         <ShowcaseCardTag tags={project.tags} />
       </ul>
-    </>
+    </animated.li>
+</Link>
+
+
   );
 });
 

@@ -1,5 +1,6 @@
 export const projects: Project[] = [
   {
+    href:"",
     title: '致尘沙不再的明天',
     description: '复古机械风格，2D横版剧情向解谜游戏，游戏完整流程约15分钟。 ',
     preview: '/img/gamejam/wyminigame.jpg',
@@ -14,6 +15,7 @@ export const projects: Project[] = [
     website: 'https://www.gcores.com/games/85656',
     tags: ['恐怖', '解谜', '爱情'],
     type: 'Game Jam',
+    href: undefined
   },
   {
     title: '煎饼循环',
@@ -22,6 +24,7 @@ export const projects: Project[] = [
     website: 'https://www.bilibili.com/video/BV1Ct4y1G7Gj/?spm_id_from=333.337',
     tags: ['休闲', '模拟经营'],
     type: 'Game Jam',
+    href: undefined
   },
   {
     title: '秋田犬物语',
@@ -31,6 +34,7 @@ export const projects: Project[] = [
 
     tags: ['模拟经营'],
     type: 'Game Jam',
+    href: undefined
   },
   {
     title: '守护者',
@@ -39,6 +43,7 @@ export const projects: Project[] = [
     website: 'https://www.bilibili.com/video/BV1Ce411V7X5/?spm_id_from=333.999.0.0',
     tags: ['Roguelike', '奇幻'],
     type: 'Game Jam',
+    href: undefined
   },
   {
     title: 'Sunny Land',
@@ -47,6 +52,7 @@ export const projects: Project[] = [
     website: '',
     tags: ['像素'],
     type: 'Study Example',
+    href: undefined
   },
   {
     title: 'Hazard of Garcon',
@@ -55,6 +61,7 @@ export const projects: Project[] = [
     website: '',
     tags: ['像素'],
     type: 'Study Example',
+    href: undefined
   },
   {
     title: 'Pixel Game',
@@ -63,6 +70,7 @@ export const projects: Project[] = [
     website: 'https://www.bilibili.com/video/BV1Ma411Q7pM/?spm_id_from=333.999.0.0',
     tags: ['像素'],
     type: 'Study Example',
+    href: undefined
   },
   {
     title: '3D ARPG',
@@ -71,6 +79,7 @@ export const projects: Project[] = [
     website: 'https://www.bilibili.com/video/BV1pT4y197mp/?spm_id_from=333.999.0.0',
     tags: ['动作', '角色扮演'],
     type: 'Study Example',
+    href: undefined
   },
 
   {
@@ -80,6 +89,7 @@ export const projects: Project[] = [
     website: 'https://www.bilibili.com/video/BV1Fd4y1Y7Zj/?spm_id_from=333.999.0.0',
     tags: ['动作', '角色扮演'],
     type: 'Study Example',
+    href: undefined
   },
 ]
 
@@ -99,6 +109,8 @@ export type TagType =
   | '休闲'
   | '益智'
   | '公益'
+  | '单机'
+  | '联网'
   | '文字'
   | '恐怖'
   | '解谜'
@@ -112,18 +124,19 @@ export type TagType =
   ;
 
 export type ProjectType =
-  | 'personal'
-  | 'web'
-  | 'app'
+  | 'UI'
+  | 'App'
   | 'Game Jam'
+  | 'Mini Program'
   | 'Study Example'
-  | 'other';
+  | 'Other';
 
 export type Project = {
   title: string;
   description: string;
   preview?: any;
   website: string;
+  href:String,
   source?: string | null;
   tags: TagType[];
   type: ProjectType
@@ -163,68 +176,78 @@ export const Tags: Record<TagType, Tag> = {
   '休闲': {
     label: '休闲',
     description: '',
-    color: ''
+    color: '#12affa',
   },
   '益智': {
     label: '益智',
     description: '',
-    color: ''
+    color: '#12affa',
   },
   '模拟经营': {
     label: '模拟经营',
     description: '',
-    color: ''
+    color: '#12affa',
   },
   '公益': {
     label: '公益',
     description: '通过游戏向玩家',
     color: '#e9669e'
-  }
-  ,
+  },
+
   '文字': {
     label: '文字',
     description: '',
-    color: ''
+    color: '#12affa',
   },
   '恐怖': {
     label: '恐怖',
     description: '',
-    color: ''
+    color: '#12affa',
   },
   '解谜': {
     label: '解谜',
     description: '',
-    color: ''
+    color: '#12affa',
   },
   '爱情': {
     label: '爱情',
     description: '',
-    color: ''
+    color: '#12affa',
   },
   'Roguelike': {
     label: 'Roguelike',
     description: '',
-    color: ''
+    color: '#12affa',
   },
   '像素': {
     label: '像素',
     description: '',
-    color: ''
+    color: '#12affa',
   },
   '奇幻': {
     label: '像素',
     description: '',
-    color: ''
+    color: '#12affa',
   },
   '动作': {
     label: '动作',
     description: '',
-    color: ''
+    color: '#12affa',
   },
   '角色扮演': {
     label: '角色扮演',
-    description: '',
-    color: ''
+    description: '角色扮演',
+    color: '#12affa',
+  },
+  '单机': {
+    label: "单机",
+    description: "单机游戏",
+    color: '#12affa',
+  },
+  '联网': {
+    label: "联网",
+    description: "联网游戏",
+    color: '#12affa',
   }
 };
 

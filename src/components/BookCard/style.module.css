@@ -1,6 +1,8 @@
 .noteCard{
     display: inline-block;
-    width: 25%;
+    justify-content: center;
+    align-items: center;
+    width: 24%;
     /* background-color: #666; */
     padding: 12px 8px;
     border-radius: 4px;
@@ -8,15 +10,20 @@
 
 
 .bookCover{
-    display: flex;
-    background-color: #fff;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* background-color: #fff; */
     margin: 2px 4px;
 }
 
 
 .bookCover .bookImg img{
-    display: inline-block;
+
+    /* display: inline-block; */
     border-radius: 8px;
+    object-fit: cover;
+
 }
 
 

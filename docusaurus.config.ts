@@ -177,6 +177,7 @@ const config: Config = {
         blog: {
           blogSidebarTitle: "近期文章",
           showReadingTime: true,
+
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: ({locale, blogDirPath, blogPath}) => {
@@ -213,8 +214,9 @@ const config: Config = {
           priority: 0.5,
           ignorePatterns: ['/tags/**'],
         },
+
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: ['./src/css/custom.css',],
         },
       } satisfies Preset.Options,
     ],
@@ -262,21 +264,21 @@ const config: Config = {
           label: '第九艺术',
           docsPluginId: 'community'
         },
-        {
-          label:"community版本",
-          type: 'docsVersionDropdown',
-          position: 'right',
-          docsPluginId: 'community',
-          dropdownItemsAfter: [],
-          dropdownActiveClassDisabled: true,
-        },
-        {
-          type:"docSidebar",
-          to:"docs/api",
-          sidebarId: 'apiSidebar',
-          position: 'right',
-          label: 'GameJamStarter',
-        },
+        // {
+        //   label:"community版本",
+        //   type: 'docsVersionDropdown',
+        //   position: 'right',
+        //   docsPluginId: 'community',
+        //   dropdownItemsAfter: [],
+        //   dropdownActiveClassDisabled: true,
+        // },
+        // {
+        //   type:"docSidebar",
+        //   to:"docs/api",
+        //   sidebarId: 'apiSidebar',
+        //   position: 'right',
+        //   label: 'GameJamStarter',
+        // },
         {
           label:"Doc版本",
           type: 'docsVersionDropdown',
@@ -407,6 +409,7 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
   plugins:[
+    'docusaurus-plugin-sass',
     'image-zoom',
     [
       'content-docs',

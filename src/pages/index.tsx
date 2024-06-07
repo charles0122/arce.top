@@ -16,17 +16,13 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
 
-        <Translate description="The homepage main heading">
-          Welcome to my Docusaurus translated site!
-        </Translate>
         <img src="https://badges.crowdin.net/arcetop/localized.svg" />
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            to="/blog">
+            Blog
           </Link>
         </div>
       </div>
