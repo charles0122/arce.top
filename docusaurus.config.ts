@@ -49,14 +49,15 @@ const config: Config = {
   title: '白日梦想家',
   // titleDelimiter: "-",
   tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  favicon: '/img/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://www.arce.top',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/arcetop/',
-
+  baseUrl: '/',
+  // baseUrl: '/arcetop/',
+  // noIndex:true,
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'charles0122', // Usually your GitHub org/user name.
