@@ -1,6 +1,6 @@
 ---
-33slug: flutter-project-architecure-collection
-title: Flutter项目架构合集
+slug: flutter-project-architecure-collection
+title: Flutter 项目架构合集
 authors:
   - name: Arce
     title: Unity Developer (Weak Version)
@@ -10,7 +10,7 @@ authors:
 description: ""
 tags: ["Flutter","Architecure"]
 ---
-# Flutter项目架构合集
+# Flutter 项目架构合集
 
 ## Clean Architecure
 
