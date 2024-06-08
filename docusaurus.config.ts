@@ -71,15 +71,15 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: DefaultLocale,
-    locales: ["zh-Hans"],
+    locales: ["zh-Hans","en"],
     localeConfigs: {
       "zh-Hans": {
         label: "中文",
       },
-      // "en": {
-      //   label: "English",
-      // },
-      // //日本語 (ja)
+      "en": {
+        label: "English",
+      },
+      //日本語 (ja)
       // "ja":{
       //   label:"日本語"
       // }
@@ -326,15 +326,15 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Intro',
-              to: '/docs',
-            },
-          ],
-        },
+        // {
+        //   title: 'Docs',
+        //   items: [
+        //     {
+        //       label: 'Intro',
+        //       to: '/docs/',
+        //     },
+        //   ],
+        // },
         // {
         //   title: 'Community',
         //   items: [

@@ -1,36 +1,36 @@
-# "project_id": '667662'
-# "api_token": 'f05de2a2a22d4f052687051906e38ee42a510ac02d181e5856e347af01ae454ce31d9a416f62d0fb'
-# preserve_hierarchy: true
-# languages_mapping: &languages_mapping
-#   two_letters_code:
-#     pt-BR: pt-BR
-#     zh-Hans: zh-Hans
-#     en: en
-#     fr: fr
-#     ja: ja
-# files:
-#   # JSON 翻译文件
-#   - source: /i18n/zh-Hans/**/*
-#     translation: /i18n/%two_letters_code%/**/%original_file_name%
-#     languages_mapping: *languages_mapping
-#   # Markdown 文档文件
-#   - source: /docs/**/*
-#     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
-#     languages_mapping: *languages_mapping
-#   # Markdown 博客文件
-#   - source: /blog/**/*
-#     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%
-#     languages_mapping: *languages_mapping
-#   # Markdown 社区文件
-#   - source: /blog/**/*
-#     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%
-#     languages_mapping: *languages_mapping
-#   # 历史版本
-#   # - source: /versioned_docs/**/*
-#   #   translation: /website/i18n/%two_letters_code%/docusaurus-plugin-content-docs/**/%original_file_name%
-#   #   languages_mapping: *languages_mapping
-#   # 页面
-#   # - source: /src/pages/**/*
-#   #   translation: /website/i18n/%two_letters_code%/docusaurus-plugin-content-pages/**/%original_file_name%
-#   #   ignore: [/**/*.js, /**/*.jsx, /**/*.ts, /**/*.tsx, /**/*.css]
-#   #   languages_mapping: *languages_mapping
+"project_id": '667662'
+"api_token": 'f05de2a2a22d4f052687051906e38ee42a510ac02d181e5856e347af01ae454ce31d9a416f62d0fb'
+preserve_hierarchy: true
+languages_mapping: &languages_mapping
+  two_letters_code:
+    pt-BR: pt-BR
+    zh-Hans: zh-Hans
+    en: en
+    fr: fr
+    ja: ja
+files:
+  # JSON 翻译文件
+  - source: /i18n/zh-Hans/**/*
+    translation: /i18n/%two_letters_code%/**/%original_file_name%
+    languages_mapping: *languages_mapping
+  # Markdown 文档文件
+  - source: /docs/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+    languages_mapping: *languages_mapping
+  # Markdown 博客文件
+  - source: /blog/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%
+    languages_mapping: *languages_mapping
+  # Markdown 社区文件
+  - source: /blog/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%
+    languages_mapping: *languages_mapping
+  # 历史版本
+  # - source: /versioned_docs/**/*
+  #   translation: /website/i18n/%two_letters_code%/docusaurus-plugin-content-docs/**/%original_file_name%
+  #   languages_mapping: *languages_mapping
+  # 页面
+  # - source: /src/pages/**/*
+  #   translation: /website/i18n/%two_letters_code%/docusaurus-plugin-content-pages/**/%original_file_name%
+  #   ignore: [/**/*.js, /**/*.jsx, /**/*.ts, /**/*.tsx, /**/*.css]
+  #   languages_mapping: *languages_mapping

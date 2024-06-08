@@ -26,8 +26,8 @@ import UnityuiandimplementationCover from "./books/cover/unityuiandimplementatio
 
 import ManyWaystoImproveYourCSharpProgramCover from "./books/cover/Many-Ways-to-Improve-Your-CSharp-Program.jpeg"
 
-<BookCard book={{cover:UnityuiandimplementationCover }} to="notes/User-Interface-Design-and-Implementation-in-Unity" />
-<BookCard book={{cover:ManyWaystoImproveYourCSharpProgramCover }} to="notes/User-Interface-Design-and-Implementation-in-Unity" />
+<BookCard book={{cover:UnityuiandimplementationCover }} to="books/User-Interface-Design-and-Implementation-in-Unity" />
+<BookCard book={{cover:ManyWaystoImproveYourCSharpProgramCover }} to="books/User-Interface-Design-and-Implementation-in-Unity" />
 
 
 
