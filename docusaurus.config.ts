@@ -224,7 +224,7 @@ const config: Config = {
   themeConfig: {
     announcementBar: {
       id: "announcementBar-arce",
-      content:` ⭐️ 寻找游戏开发工作，如有需要请联系我 `,
+      content:` ⭐️ 如有需要请联系我 `,
       // backgroundColor: '#fafbfc',
       // textColor: '#091E42',
       isCloseable: false,
@@ -330,28 +330,28 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Intro',
+              to: '/docs',
             },
           ],
         },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
+        // {
+        //   title: 'Community',
+        //   items: [
+        //     {
+        //       label: 'Stack Overflow',
+        //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+        //     },
+        //     {
+        //       label: 'Discord',
+        //       href: 'https://discordapp.com/invite/docusaurus',
+        //     },
+        //     {
+        //       label: 'Twitter',
+        //       href: 'https://twitter.com/docusaurus',
+        //     },
+        //   ],
+        // },
         {
           title: 'More',
           items: [
@@ -360,13 +360,17 @@ const config: Config = {
               to: '/blog',
             },
             {
+              label: '作品',
+              to: '/project',
+            },
+            {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/charles0122',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Arcetop.`,
     },
     algolia: {
       apiKey: "17f8103d7297de826216062f2fab401f",
