@@ -71,18 +71,18 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: DefaultLocale,
-    locales: ["zh-Hans", "en","ja"],
+    locales: ["zh-Hans"],
     localeConfigs: {
       "zh-Hans": {
         label: "中文",
       },
-      "en": {
-        label: "English",
-      },
-      //日本語 (ja)
-      "ja":{
-        label:"日本語"
-      }
+      // "en": {
+      //   label: "English",
+      // },
+      // //日本語 (ja)
+      // "ja":{
+      //   label:"日本語"
+      // }
     },
   },
 
