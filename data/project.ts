@@ -68,12 +68,48 @@ export const projects: Project[] = [
     type: 'Mini Program',
   },
   {
-    title: '',
-    description: '',
+    title: 'Flutter Clean Architecure 第九艺术',
+    description: '待补充...',
     preview: '',
     website: '',
     tags: [],
     type: 'App',
+    href: undefined
+  },
+  {
+    title: 'Flutter Getx Todo',
+    description: '待补充...',
+    preview: '',
+    website: '',
+    tags: [],
+    type: 'App',
+    href: undefined
+  },
+  {
+    title: 'uniapp+Node 书城',
+    description: '待补充...',
+    preview: '',
+    website: '',
+    tags: [],
+    type: 'App',
+    href: undefined
+  },
+  {
+    title: '待补充...',
+    description: '待补充...',
+    preview: '',
+    website: '',
+    tags: [],
+    type: 'UI Design',
+    href: undefined
+  },
+  {
+    title: '待补充...',
+    description: '待补充...',
+    preview: '',
+    website: '',
+    tags: [],
+    type: 'UI Design',
     href: undefined
   },
   {
@@ -152,11 +188,17 @@ export type TagType =
   | '像素'
   | '动作'
   | '角色扮演'
+  | '2020'
+  | '2021'
+  | '2022'
+  | '2023'
+  | '2024'
   ;
 
 export type ProjectType =
-  | 'UI'
   | 'App'
+  | 'UI Design'
+  | 'Indie Game'
   | 'Game Jam'
   | 'Mini Program'
   | 'Study Example'
@@ -278,6 +320,31 @@ export const Tags: Record<TagType, Tag> = {
   '联网': {
     label: "联网",
     description: "联网游戏",
+    color: '#12affa',
+  },
+  '2020': {
+    label: "2020",
+    description: "",
+    color: '#12affa',
+  },
+  '2021': {
+    label: "2021",
+    description: "",
+    color: '#12affa',
+  },
+  '2022': {
+    label: "2022",
+    description: "",
+    color: '#12affa',
+  },
+  '2023': {
+    label: "2023",
+    description: "",
+    color: '#12affa',
+  },
+  '2024': {
+    label: "2024",
+    description: "",
     color: '#12affa',
   }
 };
