@@ -1,7 +1,10 @@
+
 export const projects: Project[] = [
+
   {
-    href:"",
-    title: '致尘沙不再的明天',
+    /// 介绍链接
+    href:"/docs/the-dust-and-sand-of-tomorrow",
+    title: '致尘沙不再的明天-网易Minigame',
     description: '复古机械风格，2D横版剧情向解谜游戏，游戏完整流程约15分钟。 ',
     preview: '/img/gamejam/wyminigame.jpg',
     website: 'https://game.academy.163.com/event/mg-2022?page=works&id=2803',
@@ -9,8 +12,8 @@ export const projects: Project[] = [
     type: 'Game Jam',
   },
   {
-    title: '病入膏肓',
-    description: '幻觉是倒放的记忆，痛苦和美好是虚幻的剪辑，现实和虚幻交织的臆想，用影片作为玩法的核心，在游戏中加入真实影像作为线索。',
+    title: '病入膏肓-机核Booom',
+    description: '用影片作为玩法的核心，在游戏中加入真实影像作为线索。',
     preview: '/img/gamejam/Attachment.png',
     website: 'https://www.gcores.com/games/85656',
     tags: ['恐怖', '解谜', '爱情'],
@@ -18,7 +21,7 @@ export const projects: Project[] = [
     href: undefined
   },
   {
-    title: '煎饼循环',
+    title: '煎饼循环-朝夕光年游戏开发挑战赛',
     description: '游戏制作人的末路是卖"煎饼" ,如果让"煎饼"成为游戏制作的开始呢',
     preview: '/img/gamejam/jianbin.png',
     website: 'https://www.bilibili.com/video/BV1Ct4y1G7Gj/?spm_id_from=333.337',
@@ -27,7 +30,7 @@ export const projects: Project[] = [
     href: undefined
   },
   {
-    title: '秋田犬物语',
+    title: '秋田犬物语-吉比特未来制作人',
     description: '农场模拟经营',
     preview: '/img/gamejam/taleofform.png',
     website: 'https://mp.weixin.qq.com/s/6BsUBJmqoNo3GcUx6255RA',
@@ -36,13 +39,41 @@ export const projects: Project[] = [
     type: 'Game Jam',
     href: undefined
   },
+
   {
-    title: '守护者',
+    title: '守护者-Unity NewbiesJam',
     description: '类吸血鬼幸存者游戏',
     preview: '/img/gamejam/shouhuzhe.png',
     website: 'https://www.bilibili.com/video/BV1Ce411V7X5/?spm_id_from=333.999.0.0',
     tags: ['Roguelike', '奇幻'],
     type: 'Game Jam',
+    href: undefined
+  },
+  {
+    href:"/docs/lezhi-mini-program",
+    title: '乐至未来-智能化志愿服务管理',
+    description: '以落实立德树人根本任务，促进乡村学生全面发展、健康成长。',
+    preview: '/img/projects/lezhi-cover.png',
+    website: undefined,
+    tags: [],
+    type: 'Mini Program',
+  },
+  {
+    href:"/docs/feiyoung-mini-program",
+    title: 'Young宇宙-传统文化潮玩交流社区',
+    description: '延续历史文脉、坚定文化自信、推动文明交流互鉴，拓展中国传统文化的宣传渠道',
+    preview: '/img/projects/feiyoung-cover.png',
+    website: undefined,
+    tags: [],
+    type: 'Mini Program',
+  },
+  {
+    title: '',
+    description: '',
+    preview: '',
+    website: '',
+    tags: [],
+    type: 'App',
     href: undefined
   },
   {

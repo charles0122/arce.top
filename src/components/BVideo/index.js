@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import styles from "./style.module.css";
 
 function BVideo({ src, bsrc }) {
@@ -45,9 +45,9 @@ function BVideo({ src, bsrc }) {
   );
 }
 
-BVideo.propTypes = {
-  src: PropTypes.string.isRequired,
-  bsrc: PropTypes.string,
-};
+// BVideo.propTypes = {
+//   src: PropTypes.string.isRequired,
+//   bsrc: PropTypes.string,
+// };
 
 export default BVideo;
