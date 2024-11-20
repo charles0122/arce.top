@@ -70,8 +70,6 @@ tags: ["Flutter","Architecure"]
 │   │   │   └── user_card_widget.dart
 ```
 
-
-
 ## Very Good Architecture
 
 在VGV，我们遵循一个有四层的架构。
@@ -129,13 +127,7 @@ tags: ["Flutter","Architecure"]
 
 此图显示了洋葱架构的工作原理。域是中心，包括实体和值对象。包括用户界面和状态管理、基础结构和持久性在内的表示取决于应用程序，而应用程序取决于域。它是单向的。
 
-
-
 ![image-20240608053810146](img/2024-06-08-flutter-project-architecure-collection/image-20240608053810146.png)
-
-
-
-
 
 数据流和调用流如下所示。
 
@@ -163,8 +155,6 @@ tags: ["Flutter","Architecure"]
         └── organisms
         └── atoms
 ```
-
-
 
 ## Domain Driven Design
 
@@ -204,24 +194,38 @@ interaction    │          │ └──────▲────────
                                                       │
 ```
 
-
-
-
-
-
-
 ## Modern Architecure
 
-
+# Software Architecture Patterns
 
 ## Model View Controller
 
+model 模型：代表应用程序的数据和业务逻辑。
+
+view 视图：处理用户界面 (UI) 并向用户显示数据。
+
+controller 控制器：充当模型和视图之间的中介，在模型更改时更新视图并处理用户交互。
+
 ## Model View Presenter
 
+model 模型：代表应用程序的数据和业务逻辑。
+
+view 视图：处理 UI 并向用户显示数据。
+
+Presenter：充当模型和视图之间的中介，为视图准备数据并处理用户交互。
+
 ## Model View View-Model
+
+model 模型：代表应用程序的数据和业务逻辑。
+
+view 视图：处理 UI 并向用户显示数据。
+
+view model：充当模型和视图之间的中介，公开模型中的数据并处理用户交互。
 
 参考资料：
 
 [Flutter中非常好的分层架构 --- Very good layered architecture in Flutter](https://verygood.ventures/blog/very-good-flutter-architecture)
 
 https://medium.com/@ushimaru/beginners-guide-to-flutter-with-ddd-87d4c476c3cb
+
+https://drraghavendra99.medium.com/software-architecture-patterns-mvc-mvp-mvvm-mvvm-c-and-viper-differ-in-their-approach-to-90af79d57697
