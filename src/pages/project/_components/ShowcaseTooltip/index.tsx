@@ -8,7 +8,7 @@ interface Props {
   id: string;
   text: string;
   delay?: number;
-  children: React.ReactElement;
+  children: React.ReactElement<any>;
 }
 
 export default function Tooltip({
@@ -17,7 +17,7 @@ export default function Tooltip({
   anchorEl,
   text,
   delay,
-}: Props): JSX.Element {
+}: Props): React.JSX.Element {
   const [open, setOpen] = useState(false);
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
     null,

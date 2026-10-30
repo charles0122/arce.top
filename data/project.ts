@@ -209,7 +209,7 @@ export type Project = {
   description: string;
   preview?: any;
   website: string;
-  href:String,
+  href: string;
   source?: string | null;
   tags: TagType[];
   type: ProjectType

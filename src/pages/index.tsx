@@ -1,3 +1,4 @@
+import type {JSX} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -17,12 +18,9 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
 
-        <img src="https://badges.crowdin.net/arcetop/localized.svg" />
         <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/blog">
-            Blog
+          <Link className="button button--secondary button--lg" to="/blog">
+            博客
           </Link>
         </div>
       </div>
@@ -34,8 +32,8 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title} - 个人博客`}
+      description={siteConfig.tagline}>
       <HomepageHeader />
       <main>
         <HomepageFeatures />

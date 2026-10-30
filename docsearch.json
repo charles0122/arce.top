@@ -1,7 +1,7 @@
   {
     "index_name": "arcetop",
-    "start_urls": ["https://charles0122.github.io/arcetop/"],
-    "sitemap_urls": ["https://www.arce.com","https://charles0122.github.io/arcetop/"],
+    "start_urls": ["https://www.arce.top/"],
+    "sitemap_urls": ["https://www.arce.top/sitemap.xml"],
     "sitemap_alternate_links": true,
     "stop_urls": [
       "/tests"
@@ -26,7 +26,6 @@
       "separatorsToIndex": "_",
       "attributesForFaceting": [
         "language",
-        "version",
         "type",
         "docusaurus_tag"
       ],

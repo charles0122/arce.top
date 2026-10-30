@@ -3,8 +3,8 @@
   "compilerOptions": {
     // "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
-    "moduleResolution": "Node",
     "resolveJsonModule": true,
+    "allowArbitraryExtensions": true,
 
     // "allowUnreachableCode": false,
     // "exactOptionalPropertyTypes": false,

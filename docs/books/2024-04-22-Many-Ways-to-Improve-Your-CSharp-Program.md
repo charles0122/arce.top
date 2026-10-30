@@ -21,13 +21,7 @@ keywords:
   - Effective
 ---
 
-<!-- import { RoughNotation, RoughNotationGroup } from "react-rough-notation"; -->
-
-import Notation from '@site/src/components/Notation'
-
 <!-- truncate -->
-
-<!-- <Notation type="underline" show >1111111</Notation> -->
 
 ## 第1章　C#语言的编程习惯
 
@@ -80,8 +74,6 @@ var f = GetMagicNumber();
 var total = 100 * f / 6;
 Console.WriteLine($"Declared Type: {total.GetType().Name},Value:{total}");
 ```
-
-<Notation></Notation>
 
 请问total的值是多少？这个问题取决于GetMagicNumber方法的返回值是什么类型。下面这5种输出结果分别对应5个GetMagicNumber版本，每个版本的返回值类型都不一样：
 

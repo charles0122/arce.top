@@ -1,11 +1,10 @@
-name: Crowdin CI
+name: Build CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
   pull_request:
-    branches: [ "main" ]
-
+    branches: ['main']
 
 jobs:
   build:
@@ -13,25 +12,22 @@ jobs:
     strategy:
       matrix:
         node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name: Use actions
-      uses: actions/checkout@v3
-    - name: Use pnpm
-      uses: pnpm/action-setup@v3
-      with:
-        version: 8
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'pnpm'
-    - name: Install dependencies
-      run: pnpm install
-    - name: crowdin:sync
-      run: pnpm run crowdin:sync
-    # can delete
-    # - name: build
-    #   run: pnpm run build
-
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Typecheck
+        run: pnpm run typecheck
+      - name: Build
+        run: pnpm run build

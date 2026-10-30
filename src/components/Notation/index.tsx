@@ -34,7 +34,7 @@ enum bracketDirection{
 //   order: string | number
 // }
 
-export default function Notation(props1,props2): React.Element<RoughNotationProps,TrackVisibilityProps> {
+export default function Notation(props1,props2): React.ReactElement {
   // const show = true;
   // const {
   //   once = true,
