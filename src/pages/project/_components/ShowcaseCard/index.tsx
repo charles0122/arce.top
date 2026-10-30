@@ -1,6 +1,5 @@
 import React, { memo, useEffect, useRef } from 'react';
 import clsx from 'clsx';
-import Image from '@theme/IdealImage';
 import Link from '@docusaurus/Link';
 import { useSpring, animated, to } from '@react-spring/web';
 
@@ -87,7 +86,12 @@ const ShowcaseCard = memo(({ project }: { project: Project }) => {
     >
       {project.preview && (
         <div className={clsx('card__image', styles.showcaseCardImage)}>
-          <Image src={project.preview} alt={project.title} img={''}/>
+          <img
+            src={project.preview}
+            alt={project.title}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       )}
       <div className="card__body">
@@ -112,7 +116,9 @@ const ShowcaseCard = memo(({ project }: { project: Project }) => {
             </Link>
           )}
         </div>
-        <p className={styles.showcaseCardBody}>{project.description}</p>
+        {project.description && (
+          <p className={styles.showcaseCardBody}>{project.description}</p>
+        )}
       </div>
       <ul className={clsx('card__footer', styles.cardFooter)}>
         <ShowcaseCardTag tags={project.tags} />

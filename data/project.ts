@@ -67,51 +67,52 @@ export const projects: Project[] = [
     tags: [],
     type: 'Mini Program',
   },
-  {
-    title: 'Flutter Clean Architecure 第九艺术',
-    description: '待补充...',
-    preview: '',
-    website: '',
-    tags: [],
-    type: 'App',
-    href: undefined
-  },
-  {
-    title: 'Flutter Getx Todo',
-    description: '待补充...',
-    preview: '',
-    website: '',
-    tags: [],
-    type: 'App',
-    href: undefined
-  },
-  {
-    title: 'uniapp+Node 书城',
-    description: '待补充...',
-    preview: '',
-    website: '',
-    tags: [],
-    type: 'App',
-    href: undefined
-  },
-  {
-    title: '待补充...',
-    description: '待补充...',
-    preview: '',
-    website: '',
-    tags: [],
-    type: 'UI Design',
-    href: undefined
-  },
-  {
-    title: '待补充...',
-    description: '待补充...',
-    preview: '',
-    website: '',
-    tags: [],
-    type: 'UI Design',
-    href: undefined
-  },
+  // TODO: 项目介绍待补充后再展示
+  // {
+  //   title: 'Flutter Clean Architecure 第九艺术',
+  //   description: '待补充...',
+  //   preview: '',
+  //   website: '',
+  //   tags: [],
+  //   type: 'App',
+  //   href: undefined
+  // },
+  // {
+  //   title: 'Flutter Getx Todo',
+  //   description: '待补充...',
+  //   preview: '',
+  //   website: '',
+  //   tags: [],
+  //   type: 'App',
+  //   href: undefined
+  // },
+  // {
+  //   title: 'uniapp+Node 书城',
+  //   description: '待补充...',
+  //   preview: '',
+  //   website: '',
+  //   tags: [],
+  //   type: 'App',
+  //   href: undefined
+  // },
+  // {
+  //   title: '待补充...',
+  //   description: '待补充...',
+  //   preview: '',
+  //   website: '',
+  //   tags: [],
+  //   type: 'UI Design',
+  //   href: undefined
+  // },
+  // {
+  //   title: '待补充...',
+  //   description: '待补充...',
+  //   preview: '',
+  //   website: '',
+  //   tags: [],
+  //   type: 'UI Design',
+  //   href: undefined
+  // },
   {
     title: 'Sunny Land',
     description: '',

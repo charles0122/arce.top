@@ -5,6 +5,15 @@
   will-change: transform;
   overflow: hidden;
   touch-action: pan-y;
+  /* 等高卡片：flex 纵向布局，让标签页脚始终沉底 */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* 描述区域占据剩余空间，保证同一行卡片高度一致 */
+.showcaseCard .card__body {
+  flex: 1 1 auto;
 }
 
 .showcaseCard::before {
@@ -19,6 +28,13 @@
   overflow: hidden;
   height: 150px;
   border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.showcaseCardImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .showcaseCardHeader {

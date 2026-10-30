@@ -95,8 +95,8 @@ const config: Config = {
   themeConfig: {
     announcementBar: {
       id: 'announcementBar-arce',
-      content: ` ⭐️ 如有需要请联系我 `,
-      isCloseable: false,
+      content: `🎉️ <b>有需要？随时来撩我，秒回（大概）</b> 🥳️`,
+      isCloseable: true,
     },
     colorMode: {
       defaultMode: 'light',

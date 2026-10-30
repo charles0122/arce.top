@@ -548,17 +548,6 @@
         display: none;
       }
     }
-    div[class^='announcementBar_'] {
-      background: repeating-linear-gradient(
-        -35deg,
-        var(--ifm-color-primary-lighter),
-        var(--ifm-color-primary-lighter) 20px,
-        var(--ifm-color-primary-lightest) 10px,
-        var(--ifm-color-primary-lightest) 40px
-      );
-      font-weight: 700;
-    }
-
     /* 文档侧栏字体大小 */
     .menu__list-item > .menu__link[tabindex] {
       font-size: 0.875rem;
