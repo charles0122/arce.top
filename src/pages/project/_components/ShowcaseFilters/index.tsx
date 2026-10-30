@@ -101,7 +101,7 @@ function HeadingRow() {
 
 export default function ShowcaseFilters(): ReactNode {
   return (
-    <section className="container margin-top--l margin-bottom--lg">
+    <section className="container margin-top--lg margin-bottom--lg">
       <HeadingRow />
       <ShowcaseTagList />
     </section>

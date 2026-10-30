@@ -718,3 +718,17 @@
         var(--ifm-color-emphasis-100) 100%
       );
     }
+
+/* Infima 0.2.0-alpha.45 尚未包含此工具类（官方 showcase 组件依赖它隐藏
+   筛选器里的原生 checkbox），升级 Infima 后可移除 */
+.screen-reader-only {
+  clip-path: polygon(0 0, 0 0, 0 0);
+  white-space: nowrap;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+}
