@@ -1,17 +1,15 @@
 ---
 slug: rcode-from-analysis-to-implementation
-title: 从分析到实现：我用 Rust 造了一个"小程序码"——RCode 诞生记
-authors:
-  - name: Arce
-    title: Unity Developer (Weak Version)
-    url: https://github.com/charles0122
-    image_url: https://avatars.githubusercontent.com/u/70085736?v=4
-    email: zainai311@qq.com
+title: "从分析到实现：我用 Rust 造了一个\"小程序码\"——RCode 诞生记"
+date: 2026-10-30
 description: 两年前我写了一篇小程序码的逆向分析文章，留下了不少推测。两年后，在 AI 的帮助下我把这些推测变成了精确的规格，并亲手实现了一个开放的放射状码系统 RCode。
-tags: ["Rust", "Algorithm"]
+tags: [Rust, Algorithm]
+author: Arce
+author_title: 独立开发者
+author_url: "https://github.com/charles0122"
+author_image_url: "https://avatars.githubusercontent.com/u/70085736?v=4"
 ---
-
-# 从分析到实现：我用 Rust 造了一个"小程序码"——RCode 诞生记
+# 我用 Rust 造了一个小程序码
 
 两年前我写过一篇[《小程序码生成技术分析》](/blog/analysis-of-mini-program-code-generation-technology)。那篇文章搞清楚了微信小程序码的大部分秘密：射线状的数据分布、与 QR 码一致的 RS 纠错、32 种掩码。但也留下了不少"目测"、"疑似"、"巧合发现"——彼时的我对着一张张截图数像素，能走到那一步已经是极限。
 
@@ -287,3 +285,4 @@ RCode 目前还在活跃开发中（下一步是摄像头实时解码的移动�
 - [你一定不知道，小程序码是这样绽放的 —— 腾讯 CDC](https://cdc.tencent.com/2017/09/01/%E4%BD%A0%E4%B8%80%E5%AE%9A%E4%B8%8D%E7%9F%A5%E9%81%93%EF%BC%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%A0%81%E6%98%AF%E8%BF%99%E6%A0%B7%E7%BB%BD%E6%94%BE%E7%9A%84/)
 - [微信小程序码私有编码协议分析 —— 知乎](https://zhuanlan.zhihu.com/p/85164898)
 - [QR码 —— 维基百科](https://zh.wikipedia.org/zh-cn/QR%E7%A2%BC)
+
