@@ -1,0 +1,96 @@
+.pageMain {
+  background: #fff;
+  min-height: 100vh;
+}
+
+/* Infima 在浅色模式下将页面背景变量设为 transparent，这里显式给出底色 */
+[data-theme='dark'] .pageMain {
+  background: #1b1b1d;
+}
+
+.hero {
+  --app-accent: #2e7df6;
+  padding: 4rem 0 3rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--app-accent) 16%, transparent),
+    transparent
+  );
+}
+
+.appIcon {
+  width: 128px;
+  height: 128px;
+  border-radius: 28px;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 18%);
+}
+
+.appName {
+  margin-top: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  opacity: 0.75;
+}
+
+.storeButtons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.comingSoon {
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.features {
+  padding: 3rem 0;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.featureCard {
+  padding: 1.25rem;
+}
+
+.featureIcon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.appFooter {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding: 2rem 0 3rem;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.footerNote {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-bottom: 0;
+}

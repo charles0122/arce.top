@@ -1,3 +1,10 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
 .checkboxLabel {
   --height: 25px;
   --width: 80px;
@@ -18,7 +25,8 @@
 
 .checkboxLabel:hover {
   opacity: 1;
-  box-shadow: var(--ifm-global-shadow-md),
+  box-shadow:
+    var(--ifm-global-shadow-md),
     0 0 2px 1px var(--ifm-color-primary-dark);
 }
 

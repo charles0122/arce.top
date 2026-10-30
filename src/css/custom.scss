@@ -755,6 +755,16 @@ code {
   }
 }
 
+div[class*='announcementBar_'] {
+  background: repeating-linear-gradient(
+    -35deg,
+    var(--ifm-color-primary-lighter),
+    var(--ifm-color-primary-lighter) 20px,
+    var(--ifm-color-primary-lightest) 10px,
+    var(--ifm-color-primary-lightest) 40px
+  );
+}
+
 .screen-reader-only {
   border: 0;
   clip: rect(0 0 0 0);

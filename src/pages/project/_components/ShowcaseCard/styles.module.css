@@ -1,28 +1,9 @@
-.showcaseCard {
-  position: relative;
-  box-shadow: 0 10px 30px -5px rgb(0 0 0 / 30%);
-  transition: box-shadow 0.5s, opacity 0.5s;
-  will-change: transform;
-  overflow: hidden;
-  touch-action: pan-y;
-  /* 等高卡片：flex 纵向布局，让标签页脚始终沉底 */
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* 描述区域占据剩余空间，保证同一行卡片高度一致 */
-.showcaseCard .card__body {
-  flex: 1 1 auto;
-}
-
-.showcaseCard::before {
-  display: block;
-  font-weight: bold;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 .showcaseCardImage {
   overflow: hidden;
@@ -31,7 +12,6 @@
 }
 
 .showcaseCardImage img {
-  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -51,9 +31,9 @@
 .showcaseCardTitle a {
   text-decoration: none;
   background: linear-gradient(
-    var(--ifm-color-primary),
-    var(--ifm-color-primary)
-  )
+      var(--ifm-color-primary),
+      var(--ifm-color-primary)
+    )
     0% 100% / 0% 1px no-repeat;
   transition: background-size ease-out 200ms;
 }
@@ -63,12 +43,8 @@
 }
 
 .showcaseCardTitle,
-.showcaseCardHeader .svgIconFavorite {
+.showcaseCardHeader {
   margin-right: 0.25rem;
-}
-
-.showcaseCardHeader .svgIconFavorite {
-  color: var(--site-color-svg-icon-favorite);
 }
 
 .showcaseCardSrcBtn {
@@ -82,12 +58,12 @@
   background-color: var(--ifm-color-secondary-dark);
 }
 
-html[data-theme='dark'] .showcaseCardSrcBtn {
+[data-theme='dark'] .showcaseCardSrcBtn {
   background-color: var(--ifm-color-emphasis-200) !important;
   color: inherit;
 }
 
-html[data-theme='dark'] .showcaseCardSrcBtn:hover {
+[data-theme='dark'] .showcaseCardSrcBtn:hover {
   background-color: var(--ifm-color-emphasis-300) !important;
 }
 

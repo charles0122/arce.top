@@ -1,133 +1,95 @@
-import React, { memo, useEffect, useRef } from 'react';
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import { useSpring, animated, to } from '@react-spring/web';
-
+import Translate from '@docusaurus/Translate';
+import {Tags, TagList, type TagType, type Project} from '@site/data/project';
+import {sortBy} from '@site/src/utils/jsUtils';
+import Heading from '@theme/Heading';
+import FavoriteIcon from '../FavoriteIcon';
 import styles from './styles.module.css';
-import FavoriteIcon from '@site/src/components/svgIcons/FavoriteIcon';
-import Tooltip from '../ShowcaseTooltip';
-import {
-  Tags,
-  TagList,
-  type TagType,
-  type Project,
-  type Tag,
-} from '@site/data/project';
-import { sortBy } from '@site/src/utils/jsUtils';
-import { useGesture } from '@use-gesture/react';
 
-const TagComp = React.forwardRef<HTMLLIElement, Tag>(
-  ({ label, color, description }, ref) => (
-    <li ref={ref} className={styles.tag} title={description}>
+function TagItem({
+  label,
+  description,
+  color,
+}: {
+  label: string;
+  description: string;
+  color: string;
+}) {
+  return (
+    <li className={styles.tag} title={description}>
       <span className={styles.textLabel}>{label.toLowerCase()}</span>
-      <span className={styles.colorLabel} style={{ backgroundColor: color }} />
+      <span className={styles.colorLabel} style={{backgroundColor: color}} />
     </li>
-  )
-);
+  );
+}
 
-function ShowcaseCardTag({ tags }: { tags: TagType[] }) {
-  const tagObjects = tags.map((tag) => ({ tag, ...Tags[tag] }));
+function ShowcaseCardTag({tags}: {tags: TagType[]}) {
+  const tagObjects = tags.map((tag) => ({tag, ...Tags[tag]}));
 
   // Keep same order for all tags
   const tagObjectsSorted = sortBy(tagObjects, (tagObject) =>
-    TagList.indexOf(tagObject.tag)
+    TagList.indexOf(tagObject.tag),
   );
 
   return (
     <>
       {tagObjectsSorted.map((tagObject, index) => {
-        const id = `showcase_card_tag_${tagObject.tag}`;
-
-        return (
-          <Tooltip
-            key={index}
-            text={tagObject.description}
-            anchorEl="#__docusaurus"
-            id={id}
-          >
-            <TagComp key={index} {...tagObject} />
-          </Tooltip>
-        );
+        return <TagItem key={index} {...tagObject} />;
       })}
     </>
   );
 }
 
-const ShowcaseCard = memo(({ project }: { project: Project }) => {
-  const target = useRef(null);
-  const [{ scale, zoom }, api] = useSpring(() => ({
-    scale: 1,
-    zoom: 0,
-    config: {
-      mass: 5,
-      tension: 500,
-      friction: 40,
-    },
-  }));
-
-  useGesture(
-    {
-      onHover: ({ hovering }) =>
-        hovering ? api({ scale: 1.05 }) : api({ scale: 1 }),
-    },
-    { target, eventOptions: { passive: false } }
-  );
-
+function ShowcaseCard({project}: {project: Project}) {
+  const link = project.website ?? project.href ?? undefined;
   return (
-<Link href={project.href } className={styles.showcaseCardLink}>
-<animated.li
-      ref={target}
-      style={{
-        transform: 'perspective(100px)',
-        scale: to([scale, zoom], (s, z) => s + z),
-      }}
-      key={project.title}
-      className={clsx('card shadow--md', styles.showcaseCard)}
-    >
-      {project.preview && (
-        <div className={clsx('card__image', styles.showcaseCardImage)}>
-          <img
-            src={project.preview}
-            alt={project.title}
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-      )}
+    <li key={project.title} className="card shadow--md">
+      <div className={clsx('card__image', styles.showcaseCardImage)}>
+        <img src={project.preview ?? undefined} alt={project.title} loading="lazy" />
+      </div>
       <div className="card__body">
         <div className={clsx(styles.showcaseCardHeader)}>
-          <h4 className={styles.showcaseCardTitle}>
-            <Link href={project.website} className={styles.showcaseCardLink}>
-              {project.title}
-            </Link>
-          </h4>
+          <Heading as="h4" className={styles.showcaseCardTitle}>
+            {link ? (
+              <Link
+                href={link}
+                className={styles.showcaseCardLink}>
+                {project.title}
+              </Link>
+            ) : (
+              project.title
+            )}
+          </Heading>
           {project.tags.includes('favorite') && (
-            <FavoriteIcon svgClass={styles.svgIconFavorite} size="small" />
+            <FavoriteIcon size="medium" style={{marginRight: '0.25rem'}} />
           )}
           {project.source && (
             <Link
               href={project.source}
               className={clsx(
                 'button button--secondary button--sm',
-                styles.showcaseCardSrcBtn
-              )}
-            >
-              源码
+                styles.showcaseCardSrcBtn,
+              )}>
+              <Translate id="showcase.card.sourceLink">source</Translate>
             </Link>
           )}
         </div>
-        {project.description && (
-          <p className={styles.showcaseCardBody}>{project.description}</p>
-        )}
+        <p className={styles.showcaseCardBody}>{project.description}</p>
       </div>
       <ul className={clsx('card__footer', styles.cardFooter)}>
         <ShowcaseCardTag tags={project.tags} />
       </ul>
-    </animated.li>
-</Link>
-
-
+    </li>
   );
-});
+}
 
-export default ShowcaseCard;
+export default React.memo(ShowcaseCard);

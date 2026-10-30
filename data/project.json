@@ -1,0 +1,223 @@
+{
+  "projects": [
+    {
+      "title": "数独 Sudoku",
+      "description": "经典九宫格数独，离线可玩，多档难度、铅笔笔记与智能提示。",
+      "preview": "/img/apps/sudoku-icon.svg",
+      "website": null,
+      "source": null,
+      "href": "/apps/sudoku",
+      "tags": ["App", "休闲", "益智", "单机"]
+    },
+    {
+      "title": "致尘沙不再的明天-网易Minigame",
+      "description": "复古机械风格，2D横版剧情向解谜游戏，游戏完整流程约15分钟。",
+      "preview": "/img/gamejam/wyminigame.jpg",
+      "website": "https://game.academy.163.com/event/mg-2022?page=works&id=2803",
+      "source": null,
+      "href": "/docs/the-dust-and-sand-of-tomorrow",
+      "tags": ["Game Jam", "休闲", "益智", "文字", "公益"]
+    },
+    {
+      "title": "病入膏肓-机核Booom",
+      "description": "用影片作为玩法的核心，在游戏中加入真实影像作为线索。",
+      "preview": "/img/gamejam/Attachment.png",
+      "website": "https://www.gcores.com/games/85656",
+      "source": null,
+      "href": null,
+      "tags": ["Game Jam", "恐怖", "解谜", "爱情"]
+    },
+    {
+      "title": "煎饼循环-朝夕光年游戏开发挑战赛",
+      "description": "游戏制作人的末路是卖\"煎饼\"，如果让\"煎饼\"成为游戏制作的开始呢",
+      "preview": "/img/gamejam/jianbin.png",
+      "website": "https://www.bilibili.com/video/BV1Ct4y1G7Gj/",
+      "source": null,
+      "href": null,
+      "tags": ["Game Jam", "休闲", "模拟经营"]
+    },
+    {
+      "title": "秋田犬物语-吉比特未来制作人",
+      "description": "农场模拟经营",
+      "preview": "/img/gamejam/taleofform.png",
+      "website": "https://mp.weixin.qq.com/s/6BsUBJmqoNo3GcUx6255RA",
+      "source": null,
+      "href": null,
+      "tags": ["Game Jam", "模拟经营"]
+    },
+    {
+      "title": "守护者-Unity NewbiesJam",
+      "description": "类吸血鬼幸存者游戏",
+      "preview": "/img/gamejam/shouhuzhe.png",
+      "website": "https://www.bilibili.com/video/BV1Ce411V7X5/",
+      "source": null,
+      "href": null,
+      "tags": ["Game Jam", "Roguelike", "奇幻"]
+    },
+    {
+      "title": "乐至未来-智能化志愿服务管理",
+      "description": "以落实立德树人根本任务，促进乡村学生全面发展、健康成长。",
+      "preview": "/img/projects/lezhi-cover.png",
+      "website": null,
+      "source": null,
+      "href": "/docs/lezhi-mini-program",
+      "tags": ["小程序"]
+    },
+    {
+      "title": "Young宇宙-传统文化潮玩交流社区",
+      "description": "延续历史文脉、坚定文化自信、推动文明交流互鉴，拓展中国传统文化的宣传渠道",
+      "preview": "/img/projects/feiyoung-cover.png",
+      "website": null,
+      "source": null,
+      "href": "/docs/feiyoung-mini-program",
+      "tags": ["小程序"]
+    },
+    {
+      "title": "Sunny Land",
+      "description": "",
+      "preview": "/img/gamejam/sunnyland.png",
+      "website": null,
+      "source": null,
+      "href": null,
+      "tags": ["学习示例", "像素"]
+    },
+    {
+      "title": "Hazard of Garcon",
+      "description": "",
+      "preview": "/img/gamejam/hazardofgarcon.png",
+      "website": null,
+      "source": null,
+      "href": null,
+      "tags": ["学习示例", "像素"]
+    },
+    {
+      "title": "Pixel Game",
+      "description": "",
+      "preview": "/img/gamejam/pixelgame.png",
+      "website": "https://www.bilibili.com/video/BV1Ma411Q7pM/",
+      "source": null,
+      "href": null,
+      "tags": ["学习示例", "像素"]
+    },
+    {
+      "title": "3D ARPG",
+      "description": "",
+      "preview": "/img/gamejam/3darpg.png",
+      "website": "https://www.bilibili.com/video/BV1pT4y197mp/",
+      "source": null,
+      "href": null,
+      "tags": ["学习示例", "动作", "角色扮演"]
+    },
+    {
+      "title": "3D ARPG 使用高质量资产构建游戏",
+      "description": "使用高质量资产构建游戏",
+      "preview": "/img/gamejam/3darpgcodea.png",
+      "website": "https://www.bilibili.com/video/BV1Fd4y1Y7Zj/",
+      "source": null,
+      "href": null,
+      "tags": ["学习示例", "动作", "角色扮演"]
+    }
+  ],
+  "tags": {
+    "favorite": {
+      "label": "喜爱",
+      "description": "我最喜欢的项目，一定要去看看！",
+      "color": "#e9669e"
+    },
+    "App": {
+      "label": "App",
+      "description": "独立应用，网页或客户端",
+      "color": "#39ca30"
+    },
+    "Game Jam": {
+      "label": "Game Jam",
+      "description": "限时游戏开发活动的参赛作品",
+      "color": "#dfd545"
+    },
+    "小程序": {
+      "label": "小程序",
+      "description": "微信小程序项目",
+      "color": "#127f82"
+    },
+    "学习示例": {
+      "label": "学习示例",
+      "description": "跟教程或课程做的练习项目",
+      "color": "#8c2f00"
+    },
+    "休闲": {
+      "label": "休闲",
+      "description": "轻松休闲的玩法",
+      "color": "#12affa"
+    },
+    "益智": {
+      "label": "益智",
+      "description": "动脑解谜、考验思维",
+      "color": "#a44fb7"
+    },
+    "单机": {
+      "label": "单机",
+      "description": "离线可玩的单机游戏",
+      "color": "#14cfc3"
+    },
+    "联网": {
+      "label": "联网",
+      "description": "需要联网游玩",
+      "color": "#fe6829"
+    },
+    "文字": {
+      "label": "文字",
+      "description": "以文字叙事为核心玩法",
+      "color": "#4267b2"
+    },
+    "公益": {
+      "label": "公益",
+      "description": "公益主题作品",
+      "color": "#e9669e"
+    },
+    "恐怖": {
+      "label": "恐怖",
+      "description": "恐怖题材",
+      "color": "#8c2f00"
+    },
+    "解谜": {
+      "label": "解谜",
+      "description": "解谜玩法",
+      "color": "#39ca30"
+    },
+    "爱情": {
+      "label": "爱情",
+      "description": "爱情题材",
+      "color": "#e9669e"
+    },
+    "模拟经营": {
+      "label": "模拟经营",
+      "description": "模拟经营玩法",
+      "color": "#dfd545"
+    },
+    "Roguelike": {
+      "label": "Roguelike",
+      "description": "随机地牢、一命通关",
+      "color": "#a44fb7"
+    },
+    "奇幻": {
+      "label": "奇幻",
+      "description": "奇幻世界观",
+      "color": "#127f82"
+    },
+    "像素": {
+      "label": "像素",
+      "description": "像素美术风格",
+      "color": "#14cfc3"
+    },
+    "动作": {
+      "label": "动作",
+      "description": "动作玩法",
+      "color": "#fe6829"
+    },
+    "角色扮演": {
+      "label": "角色扮演",
+      "description": "角色扮演玩法",
+      "color": "#4267b2"
+    }
+  }
+}

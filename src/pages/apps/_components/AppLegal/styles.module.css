@@ -1,0 +1,13 @@
+.legal {
+  max-width: 760px;
+}
+
+.updated {
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+.section h2 {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+}

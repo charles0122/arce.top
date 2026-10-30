@@ -25,10 +25,13 @@ const config: Config = {
   onBrokenLinks: 'throw',
 
   markdown: {
+    mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: 'warn',
     },
   },
+
+  themes: ['@docusaurus/theme-mermaid'],
 
   // Single locale: only used to emit correct html lang & SEO metadata,
   // no extra /en/ build.
@@ -154,6 +157,10 @@ const config: Config = {
               to: '/project',
             },
             {
+              label: '产品',
+              to: '/apps',
+            },
+            {
               label: 'GitHub',
               href: 'https://github.com/charles0122',
             },
@@ -161,12 +168,6 @@ const config: Config = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Arcetop.`,
-    },
-    algolia: {
-      apiKey: '17f8103d7297de826216062f2fab401f',
-      indexName: 'arce',
-      appId: 'L8ERAJFKUJ',
-      contextualSearch: true,
     },
     giscus: {
       repo: 'charles0122/discussions.arce.top',
@@ -212,6 +213,20 @@ const config: Config = {
   plugins: [
     'docusaurus-plugin-sass',
     'image-zoom',
+    [
+      // 本地搜索：构建时生成索引，无需外部服务，支持中文分词
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['zh', 'en'],
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: true,
+        docsRouteBasePath: '/docs',
+        blogRouteBasePath: '/blog',
+        highlightSearchTermsOnTargetPage: true,
+      },
+    ],
     [
       'content-docs',
       {
