@@ -97,20 +97,21 @@ export function createTelevision(canvas: HTMLCanvasElement, onChannel: (channel:
   }
   function introSplash(cx: number, cy: number, radius: number, color: string) {
     ctx.save();ctx.translate(cx,cy);ctx.scale(radius,radius);
-    ctx.beginPath();ctx.moveTo(-1.02,-.18);
-    ctx.bezierCurveTo(-1.3,-.55,-.73,-.51,-.61,-.67);
-    ctx.bezierCurveTo(-.48,-.84,-.58,-1.16,-.3,-1.04);
-    ctx.bezierCurveTo(-.09,-.95,-.12,-.68,.12,-.74);
-    ctx.bezierCurveTo(.36,-.8,.48,-1.14,.64,-.94);
-    ctx.bezierCurveTo(.8,-.74,.49,-.48,.72,-.36);
-    ctx.bezierCurveTo(.94,-.24,1.27,-.4,1.18,-.11);
-    ctx.bezierCurveTo(1.1,.13,.79,.09,.81,.34);
-    ctx.bezierCurveTo(.83,.58,1.12,.86,.86,.93);
-    ctx.bezierCurveTo(.6,1,.43,.65,.23,.76);
-    ctx.bezierCurveTo(.02,.87,.01,1.17,-.23,1.05);
-    ctx.bezierCurveTo(-.47,.93,-.29,.65,-.55,.58);
-    ctx.bezierCurveTo(-.81,.51,-1.05,.82,-1.14,.56);
-    ctx.bezierCurveTo(-1.23,.3,-.81,.1,-1.02,-.18);
+    const points = [
+      [-1.08,-.5],[-.67,-.57],[-.54,-.96],[-.12,-.73],
+      [.3,-.94],[.48,-.58],[.96,-.65],[.85,-.2],
+      [1.14,.02],[.83,.28],[.94,.76],[.46,.65],
+      [.2,1],[-.12,.74],[-.61,.93],[-.67,.49],
+      [-1.09,.4],[-.9,.03],[-1.14,-.17],
+    ];
+    ctx.beginPath();
+    points.forEach(([x,y],i) => {
+      const previous=points[(i+points.length-1)%points.length];
+      const next=points[(i+1)%points.length];
+      const startX=x+(previous[0]-x)*.12,startY=y+(previous[1]-y)*.12;
+      if(i===0) ctx.moveTo(startX,startY);else ctx.lineTo(startX,startY);
+      ctx.quadraticCurveTo(x,y,x+(next[0]-x)*.12,y+(next[1]-y)*.12);
+    });
     ctx.closePath();ctx.fillStyle=color;ctx.fill();ctx.restore();
   }
   function text(value: string, x: number, y: number, size: number, color = '#f3f0df', align: CanvasTextAlign = 'left') {
