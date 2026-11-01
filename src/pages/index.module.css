@@ -14,7 +14,7 @@
 .television a { color: inherit; text-decoration: none; }
 .television button { font: inherit; cursor: pointer; color: inherit; }
 .television a:focus-visible, .television button:focus-visible { outline: 2px solid var(--tv-yellow); outline-offset: 5px; }
-.television[data-ready='false'] :is(.header, .station, .controls, .sticker) { opacity: 0; }
+.television[data-ready='false'] :is(.header, .station, .sticker) { opacity: 0; }
 .screen { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
 .screen:focus-visible { outline: 1px solid #f1f14c66; outline-offset: -25px; }
 .header { position: absolute; top: 6%; left: 4%; right: 4%; display: flex; align-items: center; justify-content: space-between; pointer-events: none; }
@@ -29,26 +29,11 @@
 .station { position: absolute; top: 17%; left: 6.5%; font: bold 11px monospace; letter-spacing: 2px; color: #bbbba4; pointer-events: none; }
 .station b { display: block; font-size: 18px; color: var(--tv-yellow); margin-top: 3px; text-shadow: 2px 0 #437bcd77; }
 .liveDot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--tv-yellow); vertical-align: 1px; }
-.controls { position: absolute; left: 5%; bottom: 5%; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
-.tuning { display: flex; align-items: center; padding: 3px; background: #080808cf; border: 1px solid #515147; border-radius: 7px; box-shadow: 0 2px 12px #000; }
-.tuning button { min-width: 44px; min-height: 44px; padding: 9px; border: none; background: transparent; font: bold 11px monospace; }
-.tuning button:hover, .tuning button[aria-pressed='true'] { color: var(--tv-yellow); }
-.tuning button:disabled { opacity: .3; cursor: default; }
-.tuning .power { font-size: 21px; }
-.divider { height: 16px; border-left: 1px solid #44443a; margin: 0 2px; }
-.hint { font-size: 9px; color: #aaa998; letter-spacing: 1px; margin-left: 5px; }
 .sticker { position: absolute; right: 3%; bottom: 5%; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 148px; height: 92px; background: #427846; border: 4px solid #e3e343; outline: 7px solid #366541; border-radius: 24px 38px 28px 40px; transform: rotate(-16deg); box-shadow: 8px 8px 0 #18291a; color: #f5ed55 !important; text-align: center; }
 .sticker strong { font-size: 18px; font-weight: 1000; line-height: .92; letter-spacing: -1px; }
 .sticker > span { font: 9px monospace; margin-bottom: 4px; letter-spacing: 3px; }
 .sticker small { font-size: 9px; margin-top: 7px; }
 .sticker:hover { transform: rotate(-9deg) scale(1.03); }
-.channelDetails { position: absolute; left: 10%; right: 10%; bottom: 20%; max-width: 800px; pointer-events: none; }
-.channelDetails p { font-size: 12px; color: #c5c5b5; max-width: 650px; margin: 0 0 10px; }
-.channelDetails > div { display: flex; flex-wrap: wrap; gap: 12px; }
-.channelDetails a, .channelDetails button { pointer-events: auto; display: inline-flex; align-items: center; min-height: 44px; background: var(--tv-yellow); color: #111; padding: 10px 15px; border: 0; font-size: 12px; font-weight: 700; }
-.channelDetails button { color: var(--tv-yellow); background: #111; }
-.off { position: absolute; top: 45%; width: 100%; text-align: center; letter-spacing: 6px; color: #555; font: 20px monospace; pointer-events: none; }
-.off span { display: block; font-size: 10px; margin-top: 15px; letter-spacing: 4px; }
 .dialog { color: #eeeedd; border: 1px solid #626235; background: #080908; max-width: 1000px; width: 88%; max-height: 82svh; padding: 0; box-shadow: 0 0 90px #000; }
 .dialog::backdrop { background: #000d; backdrop-filter: blur(6px); }
 .dialogInner { padding: 25px 35px 35px; background: repeating-linear-gradient(0deg, #0000 0 2px,#0003 2px 3px); }
@@ -59,8 +44,9 @@
 .helpGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 27px 36px; padding: 25px 0; }
 .helpGrid b { display: block; font-size: 14px; font-weight: 900; color: var(--tv-yellow); }
 .helpGrid span { font-size: 12px; color: #b9b9ab; }
+.helpLinks button { background: none; border: none; padding: 0; font: inherit; }
 .helpLinks { display: flex; flex-wrap: wrap; gap: 20px; font-weight: 900; color: var(--tv-yellow); }
-.helpLinks a { min-height: 44px; display: flex; align-items: center; }
+.helpLinks a, .helpLinks button { min-height: 44px; display: flex; align-items: center; }
 .projectList > div { display: flex; align-items: stretch; border-top: 1px solid #393a2c; }
 .projectList button { display: flex; align-items: center; gap: 20px; text-align: left; min-height: 48px; flex: 1; background: transparent; border: 0; font-size: 14px; padding: 12px; }
 .projectList span { color: var(--tv-yellow); font: 12px monospace; }
@@ -82,13 +68,6 @@
   .sticker strong { font-size: 16px; }
   .sticker > span { font-size: 7px; }
   .sticker small { font-size: 7px; margin-top: 4px; }
-  .controls { left: 8%; right: 8%; bottom: 6%; }
-  .tuning { width: 100%; justify-content: space-between; }
-  .tuning button { min-width: 44px; padding: 7px 4px; font-size: 9px; }
-  .divider { display: none; }
-  .hint { font-size: 8px; }
-  .channelDetails { left: 10%; right: 10%; bottom: 23%; }
-  .channelDetails p { font-size: 11px; }
   .dialog { width: 92%; }
   .dialogInner { padding: 15px; }
   .dialogHeader { font-size: 12px; padding-left: 10px; }
@@ -98,19 +77,16 @@
   .projectList button { font-size: 12px; gap: 12px; }
 }
 @media (max-width: 420px) {
-  .tuning { display: grid; grid-template-columns: repeat(4, 1fr); }
   .sticker { bottom: 25%; }
 }
 @media (max-height: 500px) and (min-width: 701px) {
   .television { min-height: 300px; }
   .station { top: 23%; }
-  .channelDetails { bottom: 25%; }
-  .channelDetails p { display: none; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .helpBadge, .sticker { transition: transform 180ms ease; }
   .television[data-ready='true'] .header { animation: controlsIn 380ms 2600ms both; }
-  .television[data-ready='true'] .station, .television[data-ready='true'] .controls { animation: controlsIn 350ms 2650ms both; }
+  .television[data-ready='true'] .station { animation: controlsIn 350ms 2650ms both; }
   .television[data-ready='true'] .sticker { animation: stickerIn 520ms 2700ms both cubic-bezier(.16,1,.3,1); }
   @keyframes controlsIn { from { opacity: 0; } to { opacity: 1; } }
   @keyframes stickerIn {
@@ -118,12 +94,4 @@
     45% { opacity: 1; transform: translate(-4px,-5px) rotate(-19deg) scale(.97); }
     100% { opacity: 1; transform: translate(0,0) rotate(-16deg) scale(1); }
   }
-}
-
-.heroActions { position: absolute; left: 50%; bottom: 18%; transform: translateX(-50%); display: flex; gap: 12px; }
-.heroActions button, .heroActions a { display: flex; align-items: center; min-height: 44px; padding: 12px 18px; background: #080808dc; color: var(--tv-yellow); border: 1px solid #74743a; font-size: 12px; white-space: nowrap; }
-@media (max-width: 700px) {
-  .heroActions { top: 16%; bottom: auto; left: auto; right: 10%; transform: none; }
-  .heroActions a { display: none; }
-  .heroActions button { font-size: 11px; padding: 10px 14px; }
 }

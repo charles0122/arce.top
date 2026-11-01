@@ -5,8 +5,8 @@ export const WORLD_H = 2200;
 // Deliberately composed pins: center x/y, width/height, rotation in radians.
 export const BOARD_LAYOUT = [
   [0, 0, 620, 340, 0],
-  [780, -45, 280, 280, -.035],
-  [-700, 70, 240, 300, .045],
+  [680, -45, 280, 280, -.035],
+  [-600, 70, 240, 300, .045],
   [-370, -620, 560, 320, -.025],
   [380, -530, 350, 230, .04],
   [980, 470, 480, 270, -.03],

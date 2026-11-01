@@ -71,7 +71,7 @@ test('two-finger translation and pinch keep the touched world point anchored', (
 });
 
 test('hero fullscreen covers the glass and the shared camera flight returns exactly to the board', () => {
-  for(const [width,height,scale] of [[1280,720,1],[390,844,390/760],[1600,900,1.25]]) {
+  for(const [width,height,scale] of [[1280,720,720/760],[390,844,390/800],[1600,900,900/760],[2560,1080,1080/760]]) {
     const full=fullscreenHeroView(width,height,scale),board={x:0,y:0,zoom:1};
     assert.ok(620*full.zoom*scale>=width-.001);
     assert.ok(340*full.zoom*scale>=height-.001);

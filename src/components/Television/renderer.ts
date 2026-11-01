@@ -75,9 +75,9 @@ export function createTelevision(canvas: HTMLCanvasElement, onChannel: (channel:
     ratio = Math.min(devicePixelRatio || 1, 1.5);
     canvas.width = Math.round(width * ratio); canvas.height = Math.round(height * ratio);
     scene.width = canvas.width; scene.height = canvas.height;
-    scale = Math.min(width / 1280, height / 720);
+    scale = Math.min(width / 1350, height / 760);
     // Keep projects readable on portrait screens while preserving the full board.
-    if (width < height) scale = width / 760;
+    if (width < height) scale = width / 800;
     if(heroFocused) {
       const full=fullscreenHeroView(width,height,scale);
       camera={x:full.x,y:full.y};zoom=full.zoom;flight=null;
@@ -165,11 +165,7 @@ export function createTelevision(canvas: HTMLCanvasElement, onChannel: (channel:
         if(index===hovered) {rounded(x-7,y-7,w+14,h+14,27);ctx.strokeStyle='#f5f246';ctx.lineWidth=3;ctx.stroke();}
         ctx.restore();
       }
-      // Instruction is painted into the same texture, so it bends with the glass.
-      if(elapsed>700&&Math.abs(camera.x)<80&&Math.abs(camera.y)<80&&zoom>.85) {
-        ctx.fillStyle='#000';ctx.fillRect(-155,229,310,40);
-        text('DRAG TO EXPLORE',0,255,16,'#eeeedd','center');
-      }
+
     }
     ctx.restore();
     if(channel>0) {

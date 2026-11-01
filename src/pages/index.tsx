@@ -17,8 +17,6 @@ export default function Home(): JSX.Element {
   const [ready, setReady] = useState(false);
   const [panel, setPanel] = useState<'help' | 'projects' | null>(null);
   const [unavailable, setUnavailable] = useState(false);
-  const [power, setPower] = useState(true);
-  const [effects, setEffects] = useState(true);
   const [digits, setDigits] = useState('');
   const digitTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const project = channel > 0 ? projects[channel - 1] : null;
@@ -51,7 +49,7 @@ export default function Home(): JSX.Element {
     <Layout title="Arce TV" description="Apps, games and notes from a curious developer. Explore the world of Arce.">
       <Head><title>Arce TV — Code, Create, Play</title><html lang="en" /></Head>
       <main className={styles.television} data-ready={ready} id="main-content" onKeyDown={event => {
-        if(panel || event.ctrlKey || event.metaKey || event.altKey || !power || event.target instanceof HTMLAnchorElement || event.target instanceof HTMLButtonElement) return;
+        if(panel || event.ctrlKey || event.metaKey || event.altKey || event.target instanceof HTMLAnchorElement || event.target instanceof HTMLButtonElement) return;
         if(event.key === '?') {event.preventDefault();setPanel('help');}
         if(/^\d$/.test(event.key)) {
           const number=(digits+event.key).slice(-3);setDigits(number);
@@ -70,35 +68,9 @@ export default function Home(): JSX.Element {
             <Link to="/project">PROJECTS <span>↗</span></Link>
           </nav>
         </header>
-        {power && <div className={styles.station} aria-live="polite"><span className={styles.liveDot} /> ARCE TV <b>{digits || String(channel).padStart(3,'0')}</b></div>}
+        <div className={styles.station} aria-live="polite"><span className={styles.liveDot} /> ARCE TV <b>{digits || String(channel).padStart(3,'0')}</b></div>
 
-        {power && project && <section className={styles.channelDetails} aria-label="Current project">
-          <p>{project.description || project.title}</p>
-          <div><Link to={project.href || project.website || '/project'}>View project ↗</Link>{project.source && <a href={project.source}>Source ↗</a>}<button onClick={()=>tv.current?.reset()}>Back to board ↩</button></div>
-        </section>}
-
-        {power && heroFocused && <section className={styles.heroActions} aria-label="About Arce">
-          <button onClick={()=>{tv.current?.toggleHero();canvas.current?.focus({preventScroll:true});}}>Back to board ↙</button>
-          <Link to="/blog">Read the blog ↗</Link>
-        </section>}
-
-        <footer className={styles.controls}>
-          <div className={styles.tuning}>
-            <button onClick={()=>tv.current?.reset()} aria-label="Reset board" disabled={!power}>⌂</button>
-            <span className={styles.divider} />
-            <button onClick={()=>select(channel-1)} aria-label="Previous channel" disabled={!power}>CH −</button>
-            <button onClick={()=>select(channel+1)} aria-label="Next channel" disabled={!power}>CH +</button>
-            <span className={styles.divider} />
-            <button onClick={()=>tv.current?.zoomBy(.85)} aria-label="Zoom out" disabled={!power || channel>0}>−</button>
-            <button onClick={()=>tv.current?.zoomBy(1.15)} aria-label="Zoom in" disabled={!power || channel>0}>+</button>
-            <button onClick={()=>setPanel('projects')} aria-label="Open project index">Index</button>
-            <button onClick={()=>setEffects(tv.current?.toggleEffects() ?? false)} aria-pressed={effects} aria-label="CRT scanlines and color fringing">CRT</button>
-            <button className={styles.power} onClick={()=>setPower(tv.current?.togglePower() ?? true)} aria-pressed={power} aria-label={power?'Turn TV off':'Turn TV on'}>⏻</button>
-          </div>
-          <span className={styles.hint}>SCROLL TO PAN · PINCH TO ZOOM · ? HELP</span>
-        </footer>
-        {power && !project && !heroFocused && <Link className={styles.sticker} to="/blog"><span>ON AIR</span><strong>IDEAS &<br />DEV NOTES</strong><small>Read the blog ↗</small></Link>}
-        {!power && <p className={styles.off}>ARCE TV <span>STANDBY</span></p>}
+        {!project && !heroFocused && <Link className={styles.sticker} to="/blog"><span>ON AIR</span><strong>IDEAS &<br />DEV NOTES</strong><small>Read the blog ↗</small></Link>}
 
         {unavailable && <section className={styles.fallback}>
           <h2>Arce — Creative developer</h2><p>The TV canvas is unavailable on this device. Explore the projects below.</p>
@@ -123,7 +95,7 @@ export default function Home(): JSX.Element {
                 <div><b>0–9</b><span>Enter a channel number; 000 is home</span></div>
                 <div><b>TAB / INDEX</b><span>Browse projects with the keyboard</span></div>
               </div>
-              <div className={styles.helpLinks}><Link to="/blog">BLOG ↗</Link><Link to="/project">PROJECTS ↗</Link><a href="https://github.com/charles0122">GITHUB ↗</a></div>
+              <div className={styles.helpLinks}><button onClick={()=>setPanel('projects')}>CHANNEL INDEX ↗</button><Link to="/blog">BLOG ↗</Link><Link to="/project">PROJECTS ↗</Link><a href="https://github.com/charles0122">GITHUB ↗</a></div>
             </>:<div className={styles.projectList}><button onClick={()=>select(0)}><span>000</span> ARCE TV · HOME</button><button onClick={()=>{setPanel(null);tv.current?.toggleHero();}}>About Arce — Full screen ↗</button>{projects.map((p,i)=><div key={p.title}><button onClick={()=>select(i+1)}><span>{String(i+1).padStart(3,'0')}</span>{p.title}</button><Link to={p.href||p.website||'/project'} aria-label={`Open ${p.title}`}>↗</Link></div>)}</div>}
           </div>
         </dialog>
