@@ -108,38 +108,12 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Arce',
+      title: 'ARCE TV',
       hideOnScroll: true,
-      logo: {
-        alt: 'Arce',
-        src: 'img/logo.webp',
-        srcDark: 'img/logo.webp',
-      },
       items: [
-        {to: 'blog', label: '博客', position: 'left'},
-        {
-          sidebarId: 'tutorialSidebar',
-          type: 'docSidebar',
-          position: 'left',
-          label: '学习',
-        },
-        {
-          label: '作品',
-          position: 'left',
-          to: 'project',
-        },
-        {
-          type: 'docSidebar',
-          to: 'community',
-          sidebarId: 'communitySidebar',
-          position: 'right',
-          label: '第九艺术',
-          docsPluginId: 'community',
-        },
-        {
-          type: 'search',
-          position: 'right',
-        },
+        {to: 'blog', label: 'BLOG ↗', position: 'right'},
+        {to: 'project', label: 'PROJECTS ↗', position: 'right'},
+        {type: 'search', position: 'right'},
       ],
     },
     footer: {
