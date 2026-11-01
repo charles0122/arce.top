@@ -69,7 +69,7 @@ export function clampZoom(value: number) { return Math.max(.45, Math.min(1.8, va
 // One transform for touch pinch and wheel zoom: the old anchor stays under
 // the new midpoint, including when zoom reaches its limits.
 export function anchoredCamera(camera: {x: number; y: number}, oldZoom: number, requestedZoom: number, from: {x: number; y: number}, to: {x: number; y: number}, scale: number) {
-  const zoom = clampZoom(requestedZoom);
+  const zoom = requestedZoom===oldZoom ? oldZoom : clampZoom(requestedZoom);
   return {
     x: camera.x + from.x / (scale * oldZoom) - to.x / (scale * zoom),
     y: camera.y + from.y / (scale * oldZoom) - to.y / (scale * zoom),
@@ -94,4 +94,26 @@ export function interpolateView(from: CameraView, to: CameraView, progress: numb
 
 export function fullscreenHeroView(width: number, height: number, scale: number): CameraView {
   return {x: width < height ? 70 : 0, y: 0, zoom: Math.max(width / CARD_W, height / CARD_H) / scale};
+}
+
+export type BoardTile = ReturnType<typeof boardTiles>[number];
+
+export function directionalTile(origin: BoardTile, dx: number, dy: number, count: number): BoardTile {
+  const length = Math.hypot(dx,dy);
+  if (!length) return origin;
+  let best = origin, score = Infinity;
+  for (const tile of boardTiles(origin.x-WORLD_W,origin.y-WORLD_H,origin.x+WORLD_W,origin.y+WORLD_H,count)) {
+    const x=tile.x-origin.x,y=tile.y-origin.y;
+    const forward=(x*dx+y*dy)/length,side=Math.abs(x*dy-y*dx)/length;
+    if(forward<=1 || side>forward) continue;
+    const candidate=Math.hypot(x,y)+side*.5;
+    if(candidate<score) {best=tile;score=candidate;}
+  }
+  return best;
+}
+
+export function draggedFocusView(view: CameraView, dx: number, dy: number, width: number, height: number, scale: number): CameraView {
+  const pull=Math.min(1,Math.hypot(dx,dy)/(Math.min(width,height)*.65));
+  const zoom=view.zoom*(1-.22*pull);
+  return {x:view.x-dx/(scale*zoom),y:view.y-dy/(scale*zoom),zoom};
 }

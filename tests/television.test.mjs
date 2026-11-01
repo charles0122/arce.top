@@ -1,7 +1,7 @@
 // Run: node --experimental-strip-types --test tests/television.test.mjs
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {screenToScene, hitTile, boardTiles, BOARD_LAYOUT, WORLD_W, WORLD_H, entrance, fullscreenHeroView, interpolateView, anchoredCamera, wheelInput, clampZoom, CARD_W} from '../src/components/Television/math.ts';
+import {screenToScene, hitTile, boardTiles, BOARD_LAYOUT, WORLD_W, WORLD_H, entrance, fullscreenHeroView, interpolateView, anchoredCamera, wheelInput, clampZoom, CARD_W, directionalTile, draggedFocusView} from '../src/components/Television/math.ts';
 
 test('curved screen hit testing keeps the center and mirrored edges aligned', () => {
   for (const [w,h] of [[1280,720],[390,844],[1024,768]]) {
@@ -66,6 +66,7 @@ test('two-finger translation and pinch keep the touched world point anchored', (
   const pan=anchoredCamera(camera,oldZoom,oldZoom,from,to,scale);
   assert.equal(pan.zoom,oldZoom);
   assert.ok(pan.x<camera.x&&pan.y<camera.y);
+  assert.equal(anchoredCamera(camera,3,3,from,to,scale).zoom,3);
   const unchanged=anchoredCamera(camera,oldZoom,oldZoom,from,from,scale);
   assert.ok(Math.abs(unchanged.x-camera.x)<1e-8&&Math.abs(unchanged.y-camera.y)<1e-8);
 });
@@ -83,4 +84,34 @@ test('hero fullscreen covers the glass and the shared camera flight returns exac
     const reverse=interpolateView(board,full,.5);
     assert.ok(Math.abs(middle.zoom-reverse.zoom)<1e-8);
   }
+});
+
+test('focused navigation chooses spatial neighbors in all four directions, including repeated boards', () => {
+  const tiles=BOARD_LAYOUT.map(([x,y,w,h,angle],index)=>({x,y,w,h,angle,index}));
+  assert.equal(directionalTile(tiles[0],1,0,15).index,1);
+  assert.equal(directionalTile(tiles[0],-1,0,15).index,2);
+  assert.equal(directionalTile(tiles[0],0,1,15).index,6);
+  assert.equal(directionalTile(tiles[0],0,-1,15).index,4);
+  for(const origin of tiles) for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]) {
+    const next=directionalTile(origin,dx,dy,15);
+    assert.ok((next.x-origin.x)*dx+(next.y-origin.y)*dy>0);
+    const repeated=directionalTile({...origin,x:origin.x+WORLD_W,y:origin.y-WORLD_H},dx,dy,15);
+    assert.equal(next.index,repeated.index);
+    assert.ok(Math.abs(repeated.x-next.x-WORLD_W)<1e-8);
+    assert.ok(Math.abs(repeated.y-next.y+WORLD_H)<1e-8);
+  }
+  assert.deepEqual(directionalTile(tiles[0],0,0,15),tiles[0]);
+});
+
+test('focused drag pulls back progressively and follows the hand without reversing direction', () => {
+  const view={x:200,y:-100,zoom:2.3},scale=.95;
+  assert.deepEqual(draggedFocusView(view,0,0,1280,720,scale),view);
+  for(const [dx,dy] of [[200,0],[-200,0],[0,200],[0,-200]]) {
+    const next=draggedFocusView(view,dx,dy,1280,720,scale);
+    assert.ok(next.zoom<view.zoom&&next.zoom>=view.zoom*.78);
+    assert.ok(Math.abs((view.x-next.x)*scale*next.zoom-dx)<1e-8);
+    assert.ok(Math.abs((view.y-next.y)*scale*next.zoom-dy)<1e-8);
+  }
+  assert.ok(draggedFocusView(view,50,0,1280,720,scale).zoom>draggedFocusView(view,200,0,1280,720,scale).zoom);
+  assert.ok(Math.abs(draggedFocusView(view,10000,0,1280,720,scale).zoom-view.zoom*.78)<1e-8);
 });
