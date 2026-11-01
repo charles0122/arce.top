@@ -95,14 +95,23 @@ export function createTelevision(canvas: HTMLCanvasElement, onChannel: (channel:
     const iw = image.naturalWidth * factor, ih = image.naturalHeight * factor;
     ctx.drawImage(image, x + (w-iw)/2, y + (h-ih)/2, iw, ih);
   }
-  function star(cx: number, cy: number, radius: number, color: string) {
-    ctx.beginPath();
-    for (let i=0; i<24; i++) {
-      const r = i%2 ? radius*.43 : radius;
-      const angle = i/24*Math.PI*2;
-      ctx.lineTo(cx+Math.cos(angle)*r,cy+Math.sin(angle)*r);
-    }
-    ctx.closePath(); ctx.fillStyle=color; ctx.fill();
+  function introSplash(cx: number, cy: number, radius: number, color: string) {
+    ctx.save();ctx.translate(cx,cy);ctx.scale(radius,radius);
+    ctx.beginPath();ctx.moveTo(-1.02,-.18);
+    ctx.bezierCurveTo(-1.3,-.55,-.73,-.51,-.61,-.67);
+    ctx.bezierCurveTo(-.48,-.84,-.58,-1.16,-.3,-1.04);
+    ctx.bezierCurveTo(-.09,-.95,-.12,-.68,.12,-.74);
+    ctx.bezierCurveTo(.36,-.8,.48,-1.14,.64,-.94);
+    ctx.bezierCurveTo(.8,-.74,.49,-.48,.72,-.36);
+    ctx.bezierCurveTo(.94,-.24,1.27,-.4,1.18,-.11);
+    ctx.bezierCurveTo(1.1,.13,.79,.09,.81,.34);
+    ctx.bezierCurveTo(.83,.58,1.12,.86,.86,.93);
+    ctx.bezierCurveTo(.6,1,.43,.65,.23,.76);
+    ctx.bezierCurveTo(.02,.87,.01,1.17,-.23,1.05);
+    ctx.bezierCurveTo(-.47,.93,-.29,.65,-.55,.58);
+    ctx.bezierCurveTo(-.81,.51,-1.05,.82,-1.14,.56);
+    ctx.bezierCurveTo(-1.23,.3,-.81,.1,-1.02,-.18);
+    ctx.closePath();ctx.fillStyle=color;ctx.fill();ctx.restore();
   }
   function text(value: string, x: number, y: number, size: number, color = '#f3f0df', align: CanvasTextAlign = 'left') {
     ctx.fillStyle=color; ctx.font=`900 ${size}px "Arial Black", "PingFang SC", sans-serif`; ctx.textAlign=align;
@@ -110,7 +119,7 @@ export function createTelevision(canvas: HTMLCanvasElement, onChannel: (channel:
   }
   function hero(x: number, y: number, elapsed: number) {
     const backdrop = entrance(elapsed, 300, 560);
-    const starScale = entrance(elapsed, 0, 440);
+    const splashScale = entrance(elapsed, 0, 440);
     const copyScale = entrance(elapsed, 100, 440);
     const logoScale = entrance(elapsed, 240, 480);
     ctx.save(); rounded(x,y,CARD_W,CARD_H,30); ctx.clip();
@@ -126,7 +135,7 @@ export function createTelevision(canvas: HTMLCanvasElement, onChannel: (channel:
     ctx.translate(x+154+226*portraitFocus,y+170+75*portraitFocus);
     ctx.scale(1-.35*portraitFocus,1-.35*portraitFocus);
     ctx.translate(-x-154,-y-170);
-    ctx.save();ctx.translate(x+154,y+170);ctx.scale(starScale,starScale);star(0,0,98,'#eeeedd');ctx.restore();
+    ctx.save();ctx.translate(x+154,y+170);ctx.scale(splashScale,splashScale);introSplash(0,0,98,'#eeeedd');ctx.restore();
     ctx.save();ctx.translate(x+154,y+170);ctx.scale(copyScale,copyScale);ctx.translate(-x-154,-y-170);
     text("HELLO, I'M",x+154,y+132,10,'#25251e','center');
     ctx.restore();
