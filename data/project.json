@@ -1,6 +1,15 @@
 {
   "projects": [
     {
+      "title": "RCode 放射状码",
+      "description": "用 Rust 实现的开放放射状码（菊花码）系统，支持三种视觉样式与纠错，附 WASM 在线生成/解码工作台。",
+      "preview": "/img/projects/rcode-demo.png",
+      "website": null,
+      "source": "https://github.com/charles0122/rcode",
+      "href": "/blog/rcode-from-analysis-to-implementation",
+      "tags": ["favorite", "App"]
+    },
+    {
       "title": "数独 Sudoku",
       "description": "经典九宫格数独，离线可玩，多档难度、铅笔笔记与智能提示。",
       "preview": "/img/apps/sudoku-icon.svg",

@@ -102,7 +102,7 @@ const config: Config = {
       isCloseable: true,
     },
     colorMode: {
-      defaultMode: 'light',
+      defaultMode: 'dark',
     },
 
     // Replace with your project's social card
