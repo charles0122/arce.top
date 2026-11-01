@@ -11,7 +11,7 @@ const HIDDEN_PATHNAME_PREFIX = '/apps';
 
 export default function AnnouncementBarWrapper(props: Props): ReactNode {
   const {pathname} = useLocation();
-  if (pathname === '/' || pathname.startsWith(HIDDEN_PATHNAME_PREFIX)) {
+  if (pathname === '/' || pathname.startsWith(HIDDEN_PATHNAME_PREFIX) || /^\/(blog|project)(\/|$)/.test(pathname)) {
     return null;
   }
   return <AnnouncementBar {...props} />;

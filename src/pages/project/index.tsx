@@ -29,12 +29,13 @@ const GITHUB_URL = 'https://github.com/charles0122';
 
 function ShowcaseHeader() {
   return (
-    <section className="margin-top--lg margin-bottom--lg text--center">
+    <section className="container project-header">
+      <p className="project-eyebrow">ARCE / SELECTED WORK</p>
       <Heading as="h1">{TITLE}</Heading>
       <p>{DESCRIPTION}</p>
       <Link className="button button--primary" to={GITHUB_URL}>
         <Translate id="showcase.header.button">
-          🥰 前往 Github 克隆项目
+          在 GitHub 上查看源码 ↗
         </Translate>
       </Link>
     </section>
@@ -44,7 +45,7 @@ function ShowcaseHeader() {
 export default function Showcase(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
-      <main className="margin-vert--lg">
+      <main className="project-page">
         <ShowcaseHeader />
         <ShowcaseFilters />
         <div

@@ -14,6 +14,7 @@ export default function ShowcaseSearchBar(): ReactNode {
   return (
     <div className={styles.searchBar}>
       <input
+        aria-label="搜索项目名称"
         placeholder={translate({
           message: '搜索项目名称...',
           id: 'showcase.searchBar.placeholder',

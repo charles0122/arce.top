@@ -90,7 +90,7 @@ const config: Config = {
           ignorePatterns: ['/tags/**'],
         },
         theme: {
-          customCss: ['./src/css/custom.css'],
+          customCss: ['./src/css/custom.css', './src/css/reading.css'],
         },
       } satisfies Preset.Options,
     ],

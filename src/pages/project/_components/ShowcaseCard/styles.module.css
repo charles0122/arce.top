@@ -7,8 +7,8 @@
 
 .showcaseCardImage {
   overflow: hidden;
-  height: 150px;
-  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+  aspect-ratio: 16 / 10;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
 }
 
 .showcaseCardImage img {
@@ -68,7 +68,7 @@
 }
 
 .showcaseCardBody {
-  font-size: smaller;
+  font-size: 0.9375rem;
   line-height: 1.66;
 }
 
