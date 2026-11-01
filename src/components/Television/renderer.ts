@@ -65,7 +65,14 @@ export function createTelevision(canvas: HTMLCanvasElement, onChannel: (channel:
   const heroImage = new Image();
   heroImage.onload = () => {dirty=true;};
   heroImage.src = '/img/hero/arce-studio.webp';
-  const heroReady = heroImage.decode().catch(() => {});
+  const splashImage = new Image();
+  splashImage.onload = () => {dirty=true;};
+  splashImage.src = '/img/hero/intro-splash.svg';
+  const heroReady = Promise.all([
+    heroImage.decode(),splashImage.decode(),
+    document.fonts.load('500 16px "Arce Condensed"'),
+    document.fonts.load('900 16px "Arce Condensed"'),
+  ]).catch(() => {});
   Promise.race([heroReady, new Promise(resolve => setTimeout(resolve, 900))]).then(() => {
     if (!disposed) {
       openedAt=performance.now();
@@ -103,27 +110,8 @@ export function createTelevision(canvas: HTMLCanvasElement, onChannel: (channel:
     const iw = image.naturalWidth * factor, ih = image.naturalHeight * factor;
     ctx.drawImage(image, x + (w-iw)/2, y + (h-ih)/2, iw, ih);
   }
-  function introSplash(cx: number, cy: number, radius: number, color: string) {
-    ctx.save();ctx.translate(cx,cy);ctx.scale(radius,radius);
-    const points = [
-      [-1.08,-.5],[-.67,-.57],[-.54,-.96],[-.12,-.73],
-      [.3,-.94],[.48,-.58],[.96,-.65],[.85,-.2],
-      [1.14,.02],[.83,.28],[.94,.76],[.46,.65],
-      [.2,1],[-.12,.74],[-.61,.93],[-.67,.49],
-      [-1.09,.4],[-.9,.03],[-1.14,-.17],
-    ];
-    ctx.beginPath();
-    points.forEach(([x,y],i) => {
-      const previous=points[(i+points.length-1)%points.length];
-      const next=points[(i+1)%points.length];
-      const startX=x+(previous[0]-x)*.12,startY=y+(previous[1]-y)*.12;
-      if(i===0) ctx.moveTo(startX,startY);else ctx.lineTo(startX,startY);
-      ctx.quadraticCurveTo(x,y,x+(next[0]-x)*.12,y+(next[1]-y)*.12);
-    });
-    ctx.closePath();ctx.fillStyle=color;ctx.fill();ctx.restore();
-  }
   function text(value: string, x: number, y: number, size: number, color = '#f3f0df', align: CanvasTextAlign = 'left') {
-    ctx.fillStyle=color; ctx.font=`900 ${size}px "Arial Black", "PingFang SC", sans-serif`; ctx.textAlign=align;
+    ctx.fillStyle=color; ctx.font=`900 ${size}px "Arce Condensed", "PingFang SC", sans-serif`; ctx.textAlign=align;
     ctx.fillText(value,x,y);
   }
   function hero(x: number, y: number, elapsed: number) {
@@ -144,12 +132,23 @@ export function createTelevision(canvas: HTMLCanvasElement, onChannel: (channel:
     ctx.translate(x+154+226*portraitFocus,y+170+75*portraitFocus);
     ctx.scale(1-.35*portraitFocus,1-.35*portraitFocus);
     ctx.translate(-x-154,-y-170);
-    ctx.save();ctx.translate(x+154,y+170);ctx.scale(splashScale,splashScale);introSplash(0,0,98,'#eeeedd');ctx.restore();
+    ctx.save();ctx.translate(x+154,y+170);ctx.scale(splashScale,splashScale);if(splashImage.complete&&splashImage.naturalWidth) ctx.drawImage(splashImage,-148,-116,296,232);ctx.restore();
     ctx.save();ctx.translate(x+154,y+170);ctx.scale(copyScale,copyScale);ctx.translate(-x-154,-y-170);
-    text("HELLO, I'M",x+154,y+132,10,'#25251e','center');
+    ctx.textAlign='center';ctx.textBaseline='middle';ctx.lineJoin='round';
+    ctx.font='900 16.4px "Arce Condensed", sans-serif';ctx.lineWidth=2.1;
+    for(const [label,dy] of [['HELLO',93],['MY NAME IS',107],['INDIE',236],['DEVELOPER',250]] as const) {
+      ctx.strokeStyle='#171912';ctx.strokeText(label,x+154,y+dy);
+      ctx.fillStyle='#fefefe';ctx.fillText(label,x+154,y+dy);
+    }
+    ctx.font='500 8.2px "Arce Condensed", sans-serif';ctx.fillStyle='#171912';
+    ctx.fillText('×',x+154,y+130);
+    ctx.fillText('AND I’M AN',x+154,y+214);
     ctx.restore();
-    ctx.save();ctx.translate(x+156,y+185);ctx.rotate(-.07);ctx.scale(logoScale,logoScale);
-    ctx.font='900 italic 50px "Arial Black", sans-serif';ctx.textAlign='center';ctx.lineWidth=6;ctx.strokeStyle='#181a12';ctx.strokeText('ARCE',0,0);ctx.fillStyle='#f1f14c';ctx.fillText('ARCE',0,0);ctx.restore();
+    ctx.save();ctx.translate(x+154,y+170);ctx.rotate(-8*Math.PI/180);ctx.scale(logoScale,logoScale);
+    ctx.font='900 74px "Arce Condensed", sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.lineJoin='round';
+    const nameScale=152/ctx.measureText('ARCE').width;ctx.scale(nameScale,1);
+    ctx.lineWidth=8;ctx.strokeStyle='#181a12';ctx.strokeText('ARCE',0,0);
+    ctx.fillStyle='#f1f14c';ctx.fillText('ARCE',0,0);ctx.restore();
     ctx.restore();ctx.restore();
   }
   function projectTile(index: number, x: number, y: number, w = CARD_W, h = CARD_H) {
@@ -403,7 +402,7 @@ export function createTelevision(canvas: HTMLCanvasElement, onChannel: (channel:
       if(disposed) return;disposed=true;stopWheel();cancelAnimationFrame(frame);observer.disconnect();media.removeEventListener('change',motionChange);
       canvas.removeEventListener('pointerdown',down);canvas.removeEventListener('pointermove',move);canvas.removeEventListener('pointerup',up);canvas.removeEventListener('pointercancel',up);
       canvas.removeEventListener('wheel',wheel);canvas.removeEventListener('keydown',key);canvas.removeEventListener('webglcontextlost',contextLost);
-      heroImage.onload=null;images.forEach(image=>{image.onload=null;});gl!.deleteTexture(texture);gl!.deleteBuffer(buffer);shaders.forEach(shader=>gl!.deleteShader(shader));gl!.deleteProgram(program);
+      heroImage.onload=null;splashImage.onload=null;images.forEach(image=>{image.onload=null;});gl!.deleteTexture(texture);gl!.deleteBuffer(buffer);shaders.forEach(shader=>gl!.deleteShader(shader));gl!.deleteProgram(program);
     },
   };
 }

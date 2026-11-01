@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Arce Condensed';
+  src: url('/fonts/gt-walsheim-condensed-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Arce Condensed';
+  src: url('/fonts/gt-walsheim-condensed-ultra-bold.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 .television {
   --tv-yellow: #f1f14c;
   position: relative;
@@ -7,7 +22,7 @@
   overflow: hidden;
   background: #000;
   color: #eeeedd;
-  font-family: 'Arial Black', 'PingFang SC', sans-serif;
+  font-family: 'Arce Condensed', 'PingFang SC', sans-serif;
   isolation: isolate;
 }
 .television * { box-sizing: border-box; word-break: normal; }

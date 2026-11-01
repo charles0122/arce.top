@@ -57,7 +57,7 @@ export default function Home(): JSX.Element {
           digitTimer.current=setTimeout(()=>{const next=Number(number);if(next<=projects.length) tv.current?.select(next);setDigits('');},700);
         }
       }}>
-        <h1 className={styles.srOnly}>Arce TV — Apps, games and creative experiments</h1>
+        <h1 className={styles.srOnly}>Arce TV — Indie developer, apps, games and creative experiments</h1>
         <canvas ref={canvas} className={styles.screen} tabIndex={0} aria-label="Interactive portfolio. Drag or scroll with two fingers to pan; pinch or use the mouse wheel to zoom. Arrow keys move, Enter opens, Home resets. The index lists every project." aria-describedby="tv-instructions" />
         <p id="tv-instructions" className={styles.srOnly}>Channel {channel}. {project?.title || (heroFocused ? 'About Arce' : 'Home')}. Page Up and Page Down change channels. Escape returns home. Press ? for help.</p>
 
@@ -82,7 +82,7 @@ export default function Home(): JSX.Element {
           <div className={styles.dialogInner}>
             <div className={styles.dialogHeader}><span>{panel==='help'?'000 — HELP':'INDEX — SELECT A CHANNEL'}</span><button onClick={()=>setPanel(null)} aria-label="Close panel" autoFocus>×</button></div>
             {panel==='help'?<>
-              <h2>Hello, I’m Arce.<br />Curiosity, on air.</h2>
+              <h2>Hello, I’m Arce.<br />Indie developer.</h2>
               <p>Exploring the space between code, games and design. Pick a project, or tune into another channel.</p>
               <div className={styles.helpGrid}>
                 <div><b>DRAG</b><span>Move around the board</span></div>
