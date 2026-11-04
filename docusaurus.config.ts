@@ -40,6 +40,41 @@ const config: Config = {
     locales: ['zh-Hans'],
   },
 
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: '/fonts/gt-walsheim-condensed-medium.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preload',
+        href: '/fonts/gt-walsheim-condensed-ultra-bold.woff2',
+        as: 'font',
+        type: 'font/woff2',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {property: 'og:type', content: 'website'},
+    },
+    {
+      tagName: 'meta',
+      attributes: {property: 'og:site_name', content: 'Arce TV'},
+    },
+    {
+      tagName: 'meta',
+      attributes: {name: 'twitter:title', content: '白日梦想家 | Arce TV'},
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -64,6 +99,8 @@ const config: Config = {
           includeCurrentVersion: true,
         } satisfies DocsOptions,
         blog: {
+          blogTitle: '博客',
+          blogDescription: 'Unity / Flutter / 全栈与游戏开发的学习笔记、踩坑记录与项目实践。',
           blogSidebarTitle: '近期文章',
           showReadingTime: true,
           onInlineAuthors: 'ignore',
@@ -72,8 +109,8 @@ const config: Config = {
           feedOptions: {
             type: 'all',
             title: '白日梦想家',
-            description: '',
-            copyright: `Copyright © ${new Date().getFullYear()} Arce. All rights reserved.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">赣ICP备2021008942号-1</a></p>`,
+            description: 'Unity / Flutter / 全栈与游戏开发的学习笔记、踩坑记录与项目实践。',
+            copyright: `Copyright © ${new Date().getFullYear()} Arce. All rights reserved.<p><a href="https://beian.miit.gov.cn/" class="footer_lin">赣ICP备2021008942号-1</a></p>`,
             createFeedItems: async (params) => {
               const {blogPosts, defaultCreateFeedItems, ...rest} = params;
               return defaultCreateFeedItems({
@@ -106,13 +143,14 @@ const config: Config = {
     },
 
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/arce-social-card.jpg',
     navbar: {
       title: 'ARCE TV',
       hideOnScroll: true,
       items: [
         {to: 'blog', label: 'BLOG ↗', position: 'right'},
         {to: 'project', label: 'PROJECTS ↗', position: 'right'},
+        {to: 'about', label: 'ABOUT ↗', position: 'right'},
         {type: 'search', position: 'right'},
       ],
     },
@@ -122,6 +160,10 @@ const config: Config = {
         {
           title: 'More',
           items: [
+            {
+              label: '关于',
+              to: '/about',
+            },
             {
               label: '博客',
               to: '/blog',

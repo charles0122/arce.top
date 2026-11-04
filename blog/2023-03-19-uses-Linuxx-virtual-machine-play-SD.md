@@ -11,7 +11,7 @@ tags: [AI, Stable Diffusion, AMD, Linux]
 
 # 环境配置
 
-![linux install](img/2023-03-19-A卡使用Linuxx虚拟机玩Stable/image-20230319004743806.png)
+![linux install](img/2023-03-19-A卡使用Linuxx虚拟机玩Stable/image-20230319004743806.webp)
 
 ## 更新 apt
 

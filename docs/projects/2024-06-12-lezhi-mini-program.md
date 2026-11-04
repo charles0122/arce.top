@@ -11,13 +11,13 @@ description: ""
 ---
 # 乐至未来-智能化志愿服务管理
 
-![logo](img/2024-06-12-lezhi-mini-program/logo.jpg)
+![logo](img/2024-06-12-lezhi-mini-program/logo.webp)
 
 ## 开发背景
 
-![Snipaste_2022-06-19_02-01-19](img/2024-06-12-lezhi-mini-program/Snipaste_2022-06-19_02-01-19.png)
+![Snipaste_2022-06-19_02-01-19](img/2024-06-12-lezhi-mini-program/Snipaste_2022-06-19_02-01-19.webp)
 
-![image-20220606221505390](img/2024-06-12-lezhi-mini-program/image-20220606221505390.png)
+![image-20220606221505390](img/2024-06-12-lezhi-mini-program/image-20220606221505390.webp)
 
 **用科技创造社会价值与助力乡村振兴，善待乡村教师就是善待乡村未来**
 
@@ -43,13 +43,13 @@ description: ""
 
 ## 产品设计
 
-![image-20220606181215180](img/2024-06-12-lezhi-mini-program/image-20220606181215180.jpg)
+![image-20220606181215180](img/2024-06-12-lezhi-mini-program/image-20220606181215180.webp)
 
 该小程序的颜色风格为蓝色和白色的搭配，给人沉稳大方的品牌气质。选取固定的颜色在包装和logo设计中，产品形象明显。在整个白色的背景上铺满饱和度较高的蓝色，在整个画面上显得更加明亮、纯粹。
 
 ### 首页界面
 
-![image-20220606173201976](img/2024-06-12-lezhi-mini-program/image-20220606173201976.jpg)
+![image-20220606173201976](img/2024-06-12-lezhi-mini-program/image-20220606173201976.webp)
 
 首页主要有三大模块，可以跳转到搜索页面
 
@@ -67,7 +67,7 @@ description: ""
 
 ### 活动界面
 
-![image-20220606175631108](img/2024-06-12-lezhi-mini-program/image-20220606175631108.jpg)
+![image-20220606175631108](img/2024-06-12-lezhi-mini-program/image-20220606175631108.webp)
 
 活动页面主要是志愿活动、答题活动（未完成）、打卡活动（未完成），还有活动日历，可以看到用户自己参与的活动
 
@@ -93,7 +93,7 @@ description: ""
 
 ### 我的界面
 
-![image-20220606183548404](img/2024-06-12-lezhi-mini-program/image-20220606183548404.jpg)
+![image-20220606183548404](img/2024-06-12-lezhi-mini-program/image-20220606183548404.webp)
 
 我的界面主要有用户空间，我的收藏、我的关注、我的成就、每日签到等功能
 

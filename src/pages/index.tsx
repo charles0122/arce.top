@@ -5,8 +5,38 @@ import Head from '@docusaurus/Head';
 import {projects} from '@site/src/components/Television/content';
 import {createTelevision} from '@site/src/components/Television/renderer';
 import styles from './index.module.css';
+import JsonLd from '@site/src/components/JsonLd';
 
 type Television = ReturnType<typeof createTelevision>;
+
+const HOME_JSON_LD = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Arce TV',
+    alternateName: ['白日梦想家', 'arce.top'],
+    url: 'https://www.arce.top/',
+    description: '白日梦想家 Arce TV：独立开发者的应用、游戏、学习笔记与创意实验。',
+    inLanguage: 'zh-Hans',
+    publisher: {
+      '@type': 'Person',
+      name: 'Arce',
+      alternateName: 'charles0122',
+      url: 'https://github.com/charles0122',
+      sameAs: ['https://github.com/charles0122', 'https://www.arce.top/about'],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Arce',
+    alternateName: ['白日梦想家', 'charles0122'],
+    url: 'https://www.arce.top/about',
+    image: 'https://avatars.githubusercontent.com/u/70085736?v=4',
+    sameAs: ['https://github.com/charles0122'],
+    jobTitle: 'Indie developer',
+  },
+];
 
 export default function Home(): JSX.Element {
   const canvas = useRef<HTMLCanvasElement>(null);
@@ -46,8 +76,19 @@ export default function Home(): JSX.Element {
   }
 
   return (
-    <Layout title="Arce TV" description="Apps, games and notes from a curious developer. Explore the world of Arce.">
-      <Head><title>Arce TV — Code, Create, Play</title><html lang="en" /></Head>
+    <Layout
+        title="Arce TV"
+        description="白日梦想家 Arce TV：独立开发者的应用、游戏、学习笔记与创意实验。">
+      <Head>
+        <title>Arce TV — Code, Create, Play</title>
+        <html lang="zh-Hans" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Arce TV" />
+        <meta property="og:locale" content="zh_Hans" />
+        <meta name="twitter:title" content="Arce TV — Code, Create, Play" />
+        <meta name="twitter:description" content="白日梦想家 Arce TV：独立开发者的应用、游戏、学习笔记与创意实验。" />
+      </Head>
+      <JsonLd data={HOME_JSON_LD} />
       <main className={styles.television} data-ready={ready} id="main-content" onKeyDown={event => {
         if(panel || event.ctrlKey || event.metaKey || event.altKey || event.target instanceof HTMLAnchorElement || event.target instanceof HTMLButtonElement) return;
         if(event.key === '?') {event.preventDefault();setPanel('help');}

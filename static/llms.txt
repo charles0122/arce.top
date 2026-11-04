@@ -1,0 +1,15 @@
+# Arce TV / 白日梦想家
+
+> 独立开发者 Arce（GitHub @charles0122）的个人站点：应用、游戏、学习笔记与创意实验。
+
+## 核心页面
+- [首页](https://www.arce.top/): 交互式作品入口（Arce TV）
+- [关于](https://www.arce.top/about): 作者介绍与常见问题
+- [博客](https://www.arce.top/blog): Unity / Flutter / 全栈与游戏开发笔记
+- [作品](https://www.arce.top/project): 项目展示
+- [产品](https://www.arce.top/apps): 独立应用（如数独）
+- [数独 Sudoku](https://www.arce.top/apps/sudoku/): 离线经典九宫格数独
+- [站点地图](https://www.arce.top/sitemap.xml)
+
+## 站外
+- [GitHub @charles0122](https://github.com/charles0122)

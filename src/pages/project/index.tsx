@@ -15,6 +15,7 @@ import Heading from '@theme/Heading';
 import ShowcaseSearchBar from './_components/ShowcaseSearchBar';
 import ShowcaseCards from './_components/ShowcaseCards';
 import ShowcaseFilters from './_components/ShowcaseFilters';
+import JsonLd from '@site/src/components/JsonLd';
 
 const TITLE = translate({
   id: 'theme.project.title',
@@ -26,6 +27,15 @@ const DESCRIPTION = translate({
 });
 
 const GITHUB_URL = 'https://github.com/charles0122';
+
+const PROJECT_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: '项目展示',
+  description: '以下项目均由本人开发，部分开源。',
+  url: 'https://www.arce.top/project',
+  isPartOf: { '@type': 'WebSite', name: 'Arce TV', url: 'https://www.arce.top/' },
+};
 
 function ShowcaseHeader() {
   return (
@@ -45,6 +55,7 @@ function ShowcaseHeader() {
 export default function Showcase(): ReactNode {
   return (
     <Layout title={TITLE} description={DESCRIPTION}>
+      <JsonLd data={PROJECT_JSON_LD} />
       <main className="project-page">
         <ShowcaseHeader />
         <ShowcaseFilters />

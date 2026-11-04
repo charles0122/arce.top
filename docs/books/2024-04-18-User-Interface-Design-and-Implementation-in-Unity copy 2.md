@@ -114,7 +114,7 @@ keywords:
 
 回答这些问题将为您提供一个可使用的基本解决方案。从那里，您可以开始规划如何布局所有游戏界面。
 
-![尽早考虑一下您打算如何在目标平台上玩游戏您可以在这篇维基百科文章中找到许多不同智能手机的比较表](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418163738728.png)
+![尽早考虑一下您打算如何在目标平台上玩游戏您可以在这篇维基百科文章中找到许多不同智能手机的比较表](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418163738728.webp)
 
 在此阶段，您还需要考虑用户将如何与您的游戏互动，例如，预测他们的手部位置。
 
@@ -122,11 +122,11 @@ keywords:
 
 如果您正在构建控制台游戏，用户通常会使用控制器这可能需要屏幕底部的特定控制菜单，以及对鼠标输入的支持。这些只是可以指导您的线框图的一些细节。
 
-![Innersloth 的《Among Us》(2018) 是一款使用 Unity 制作的游戏，可以在移动设备、PC 和游戏机上运行](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418163853405.png)
+![Innersloth 的《Among Us》(2018) 是一款使用 Unity 制作的游戏，可以在移动设备、PC 和游戏机上运行](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418163853405.webp)
 
 线框图将迫使您考虑 UI 元素的大小在移动游戏制作中，这一点很重要，因为所有内容都必须在小显示屏上可读一些线框图工具，例如 Adobe XD、Figma 和 Miro，允许您直接查看线框在移动设备上这可以帮助您快速预览手机或平板电脑上的交互感觉。
 
-![UI Toolkit 示例项目中的示例，使用 Dragon Crashers 演示中的艺术作品，使用 Adobe XD 中的线框构建，用于测试导航流程并分享反馈](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418163932072.png)
+![UI Toolkit 示例项目中的示例，使用 Dragon Crashers 演示中的艺术作品，使用 Adobe XD 中的线框构建，用于测试导航流程并分享反馈](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418163932072.webp)
 
 ### UI美术创作
 
@@ -138,7 +138,7 @@ keywords:
 
 有用的情绪板工具包括 PureRef、Mural、Matboard 和 Evernote 当涉及在线解决方案时，请查看 Behance、Game UI Database、Dribble 或 Pinterest。
 
-![Go Moodboard 中的情绪板示例](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418164104455.png)
+![Go Moodboard 中的情绪板示例](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418164104455.webp)
 
 #### UI模型和字体
 
@@ -148,21 +148,21 @@ keywords:
 
 如果您正在制作一款休闲、卡通三消游戏，您可能需要采用更具插图性的方法 同时，逼真的科幻 FPS 可能与极简、平面艺术风格配合得更好 您可以将类似风格的产品与视觉效果进行比较参考。
 
-![UI Toolkit 示例项目基于原始 Dragon Crashers 项目，这是一款中世纪主题的闲置 RPG](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418164158055.png)
+![UI Toolkit 示例项目基于原始 Dragon Crashers 项目，这是一款中世纪主题的闲置 RPG](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418164158055.webp)
 
 整理图形，使文本和图标脱颖而出视觉层次结构应该引导玩家的眼睛关注每个游戏界面中最重要的东西毕竟，一个好的 UI 应该在视觉上有吸引力，同时也能引导玩家。
 
 每个设备的资产大小以及玩家与其交互的方式自然会有所不同 在台式计算机上具有悬停状态的按钮是有意义的，但在移动设备上不起作用，因为没有悬停状态 同时，大小小型手持设备上的按钮或切换开关需要足够大，以便手指能够与之交互，而不会遮挡其他元素 对于指针而言，这种考虑完全不同
 
-![视觉层次结构的示例：使用号召性用语，例如绿色购买按钮，以脱颖而出在这里，按钮比商品本身的名称更重要](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418164228667.png)
+![视觉层次结构的示例：使用号召性用语，例如绿色购买按钮，以脱颖而出在这里，按钮比商品本身的名称更重要](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418164228667.webp)
 
 定义你的 UI 风格时，要注意优化避免在游戏中导入数十个巨大的纹理你的 UI 应该能够快速加载和高度响应。
 
-![在大横幅图形上使用对称性并对框架进行 9 片拉伸以节省纹理空间](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418164307481.png)
+![在大横幅图形上使用对称性并对框架进行 9 片拉伸以节省纹理空间](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418164307481.webp)
 
 使用尽可能少的纹理创建您的 UI。Unity 提供了平铺等选项，以及为此目的进行的 9 层拉伸。在模拟时使用这些系统您的界面，并实现拉伸渐变或平铺纹理来填充空白空间巧妙地使用对称性可以将纹理大小减少一半。
 
-![在为移动设备进行设计时，包含许多元素的屏幕特别敏感在实际屏幕上预先可视化模型可以帮助您将它们调整到正确的尺寸](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418164425465.png)
+![在为移动设备进行设计时，包含许多元素的屏幕特别敏感在实际屏幕上预先可视化模型可以帮助您将它们调整到正确的尺寸](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418164425465.webp)
 
 这些流行的 DCC 软件也适合模型：Adobe Photoshop、Adobe Illustrator、Affinity Photo、Affinity Designer 和 Krita 用于访问字体资源的一些网站包括 Dafont、Google Fonts、Typodermic Fonts 和 WhatFontIs
 
@@ -174,7 +174,7 @@ keywords:
 
 在 Behance 上，您可以从分享《英雄联盟》风格指南的艺术家那里找到灵感，《英雄》、《Apex 英雄》移动版、《毁灭战士》和《往日不再》。
 
-![Behance 上的更多 UI 风格指南示例来自 June’s Journey，Bounzy！移动和主战坦克](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418165113853.png)
+![Behance 上的更多 UI 风格指南示例来自 June’s Journey，Bounzy！移动和主战坦克](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418165113853.webp)
 
 #### UI资产准备
 
@@ -182,7 +182,7 @@ keywords:
 
 将视觉元素减少到最简单的状态。例如，您可能删除静态占位符文本，为实时 UI 中的动态文本元素腾出空间 考虑可以重用的内容：通用按钮、框架或对话框和弹出窗口的背景、导出独特的元素，例如图标，作为单独的对象。
 
-![UI Toolkit 示例中的最终生产资源 - 项目视图和检查器窗口中的 Dragon Crashers](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418165219163.png)
+![UI Toolkit 示例中的最终生产资源 - 项目视图和检查器窗口中的 Dragon Crashers](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418165219163.webp)
 
 :::tip 缩放视觉元素
 
@@ -202,7 +202,7 @@ keywords:
 
 您通常会在游戏引擎中对 UI 进行灰盒处理，这需要进行实验才能得到正确的灰盒处理最终可以帮助您解决导航流程和布局问题。
 
-![使用 Unity 中包含的 ProBuilder 对关卡设计进行灰盒化](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418165515997.png)
+![使用 Unity 中包含的 ProBuilder 对关卡设计进行灰盒化](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418165515997.webp)
 
 #### 占位资源
 
@@ -210,7 +210,7 @@ keywords:
 
 重用以前游戏中的资产或将外部资产合并为占位符。Asset Store 提供各种 [GUI 资源](https://assetstore.unity.com/2d/gui?utm_source=demand-gen&utm_medium=pdf&utm_campaign=authoring-optimizing-ui&utm_content=ui-design-ebook)、[图标](https://assetstore.unity.com/3d/gui?utm_source=demand-gen&utm_medium=pdf&utm_campaign=authoring-optimizing-ui&utm_content=ui-design-ebook)、[字体](https://assetstore.unity.com/2d/fonts?utm_source=demand-gen&utm_medium=pdf&utm_campaign=authoring-optimizing-ui&utm_content=ui-design-ebook)和用于此目的的[工具](https://assetstore.unity.com/tools/gui?utm_source=demand-gen&utm_medium=pdf&utm_campaign=authoring-optimizing-ui&utm_content=ui-design-ebook)。如果您需要模拟文本，可以尝试从这个[网站](https://loremipsum.io/ultimate-list-of-lorem-ipsum-generators/)。
 
-![Asset Store 可以帮助您使用占位符资产进行原型设计：其中包括完整的游戏 GUI 皮肤，例如 MobStudios 的皮肤（左），或用于示例项目的 Rexard 的装备和技能图标（右）](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418165829998.png)
+![Asset Store 可以帮助您使用占位符资产进行原型设计：其中包括完整的游戏 GUI 皮肤，例如 MobStudios 的皮肤（左），或用于示例项目的 Rexard 的装备和技能图标（右）](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418165829998.webp)
 
 #### 资产导入
 
@@ -218,7 +218,7 @@ keywords:
 
 一些 Unity 工具可以简化此过程，例如 Sprite Editor、PSD Importer、AssetPostProcessor、Presets 和 Sprite Atlas 下一章将更详细地解释这些工具。
 
-![Sprite Atlas 可用于将多个精灵打包到一个更大的纹理中以优化性能](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418165857254.png)
+![Sprite Atlas 可用于将多个精灵打包到一个更大的纹理中以优化性能](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418165857254.webp)
 
 #### 在引擎中设置UI
 
@@ -250,7 +250,7 @@ UI Toolkit 和 Unity UI 可以在同一个项目中同时工作 我们建议逐�
 - Unity UI 的输入实现通过 Unity 事件系统进行。例如，按钮有一个 OnClick 回调事件，您可以在其中调用内置方法和脚本方法。编辑器中的交互式 UI 对艺术家友好，并且有助于原型设计，但由于项目中的任何人都可以访问它，因此请注意，当不同的团队成员更改同一组件时，可能会发生合并冲突
 - UI Toolkit 提供了一个全面的事件系统，将用户交互连接到视觉元素 C## 脚本可以注册可用事件的回调，例如 myVisualElement。RegisterCallBack\<MouseDownEvent\>(myFunction) 将触发，当用户点击鼠标时指定的 myFunction视觉元素。从本质上讲，UI Toolkit 将功能实现与 UI 设计分开。这区分了开发人员和 UI 美术师的角色，使每个团队能够专注于自己的专业虽然 UI 美术师通常不负责设置回调和事件，但他们应该了解如果他们想要灰盒功能设计并可以将其交给 UI 程序员，则需要执行此流程
 
-![左边是通过Unity Event System连接脚本与Unity UI GameObjects的示例；右侧是在 UI Toolkit 中注册以接收输入回调的可视元素](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418172217541.png)
+![左边是通过Unity Event System连接脚本与Unity UI GameObjects的示例；右侧是在 UI Toolkit 中注册以接收输入回调的可视元素](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418172217541.webp)
 
 #### 测试UI
 
@@ -420,7 +420,7 @@ UI Builder 微型网站包含界面概述，以便您可以更好地熟悉窗口
 
 在下面的示例中，一个大的视觉元素可以代替左侧的菜单栏 单独的子视觉元素来代表每个按钮
 
-![将模型（左）与其 UI Builder 中的线框（右）进行比较：视觉元素根据参考进行分布、定位和大小](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418174619681.png)
+![将模型（左）与其 UI Builder 中的线框（右）进行比较：视觉元素根据参考进行分布、定位和大小](img/2024-04-18-User-Interface-Design-and-Implementation-in-Unity/image-20240418174619681.webp)
 
 定义子视觉元素时，UI Builder 提供两个位置选项：
 

@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 import AppNavbar from '../AppNavbar';
 import type {AppMeta} from '@site/src/data/apps';
+import JsonLd from '@site/src/components/JsonLd';
 
 function StoreButtons({stores}: {stores: AppMeta['stores']}) {
   const buttons = [
@@ -34,8 +35,21 @@ function StoreButtons({stores}: {stores: AppMeta['stores']}) {
 }
 
 export default function AppLanding({app}: {app: AppMeta}) {
+  const softwareLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: app.name,
+    description: app.description,
+    applicationCategory: 'GameApplication',
+    operatingSystem: 'iOS, Android',
+    url: `https://www.arce.top/apps/${app.slug}`,
+    image: `https://www.arce.top${app.icon}`,
+    author: { '@type': 'Person', name: 'Arce', url: 'https://github.com/charles0122' },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'CNY' },
+  };
   return (
     <Layout title={app.name} description={app.tagline}>
+      <JsonLd data={softwareLd} />
       <AppNavbar app={app} />
       <main className={styles.pageMain}>
         <header

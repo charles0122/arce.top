@@ -138,7 +138,7 @@ oid: oid
 
 ![image-20240119162024709](img/2024-01-19-voxelhouse-by-oskar/image-20240119162024709.png)
 
-![image-20240119162038136](img/2024-01-19-voxelhouse-by-oskar/image-20240119162038136.png)
+![image-20240119162038136](img/2024-01-19-voxelhouse-by-oskar/image-20240119162038136.webp)
 
 </div>
 
